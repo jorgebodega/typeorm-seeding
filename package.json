@@ -63,7 +63,7 @@
     "chalk": "^4",
     "faker": "^5.5.3",
     "glob": "^7.2.0",
-    "ora": "^5",
+    "ora": "^6.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "yargs": "^17.3.0"
