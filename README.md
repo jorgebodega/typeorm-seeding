@@ -46,12 +46,21 @@
 # Contents
 
 - [Factory](#factory-1)
-  - [attrs](#factory-1)
-  - [make & makeMany](#factory-1)
-  - [create & createMany](#factory-1)
-  - [Faker](#factory-1)
+  - [attrs](#attrs)
+    - [Simple value](#simple-value)
+    - [Function](#function)
+    - [InstanceAttribute](#instanceattribute)
+    - [LazyInstanceAttribute](#lazyinstanceattribute)
+    - [Subfactory](#subfactory)
+  - [make & makeMany](#make--makemany)
+  - [create & createMany](#create--createmany)
+  - [faker](#faker)
 - [Seeder](#seeder-1)
+  - [run](#run)
+  - [call](#call)
 - [CLI](#cli-configuration)
+  - [config](#config)
+  - [seed](#seed)
 - [Testing features](#testing-features)
 
 # Installation
@@ -177,11 +186,11 @@ protected attrs: FactorizedAttrs<User> = {
 
 Those factorized attributes resolves to the value of the original attribute, and could be one of the following types:
 
-- Simple value
-- Function
-- InstanceAttribute
-- LazyInstanceAttribute
-- Subfactory
+- [Simple value](#simple-value)
+- [Function](#function)
+- [InstanceAttribute](#instanceattribute)
+- [LazyInstanceAttribute](#lazyinstanceattribute)
+- [Subfactory](#subfactory)
 
 ### Simple value
 
@@ -254,6 +263,17 @@ protected attrs: FactorizedAttrs<User> = {
 
 ### `Subfactory`
 
+```typescript
+export class Subfactory<T> {
+  constructor(factory: Constructable<Factory<T>>)
+  constructor(factory: Constructable<Factory<T>>, values?: Partial<FactorizedAttrs<T>>)
+  constructor(factory: Constructable<Factory<T>>, count?: number)
+  constructor(factory: Constructable<Factory<T>>, values?: Partial<FactorizedAttrs<T>>, count?: number)
+
+  ...
+}
+```
+
 Subfactories are just a wrapper of another factory, to avoid explicit operations that could lead to unexpected results over that factory, like
 
 ```typescript
@@ -321,7 +341,7 @@ new UserFactory().create({ email: 'other@mail.com' }, { listeners: false })
 new UserFactory().createMany(10, { email: 'other@mail.com' }, { listeners: false })
 ```
 
-## Faker
+## faker
 
 [Faker](https://github.com/faker-js/faker) package has been removed from `dependencies`. If you want to use it, please install it manually and just import when needed.
 
