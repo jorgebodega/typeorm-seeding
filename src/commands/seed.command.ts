@@ -131,7 +131,9 @@ export class SeedCommand implements CommandModule {
     try {
       seederFileExports = await Promise.all(seederPaths.map((seederFile) => import(seederFile))).then(
         (seederExports) => {
-          return seederExports.map((seederExport) => seederExport.default)
+          return seederExports
+            .map((seederExport) => seederExport.default)
+            .filter((seederExport) => Boolean(seederExport))
         },
       )
     } catch (err) {
