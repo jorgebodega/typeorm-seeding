@@ -1,31 +1,8 @@
 ### generated stuff ###
-dist
-lib
-es
 coverage
-.rpt2_cache
+dist
 test.db
+.vscode
 
 ### node ###
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules/
-.npm
-
-### vs code ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-### templates ###
-tmp
-old
-
-### Arch linux error ###
-~
-.vscode/
+node_modules

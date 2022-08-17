@@ -1,14 +1,12 @@
 {
   "extends": "@tsconfig/node16",
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "es2020",
-    "moduleResolution": "node",
-    "importHelpers": true,
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "resolveJsonModule": true
+    "importHelpers": true,
+    "outDir": "dist",
+    "target": "es2020",
+    "sourceMap": true
   }
 }
