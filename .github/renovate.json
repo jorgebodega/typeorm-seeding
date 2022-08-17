@@ -1,6 +1,7 @@
 {
   "extends": [
     "config:base",
+    "group:allNonMajor",
     ":assignAndReview(jorgebodega)",
     ":automergeDisabled",
     ":semanticCommits",
@@ -9,19 +10,12 @@
     ":timezone(UTC+1)"
   ],
   "baseBranches": ["next"],
+  "schedule": ["every sunday"],
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "excludePackageNames": ["typeorm"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "matchPackagePatterns": ["typeorm"],
+      "groupName": "typeorm",
+      "automerge": false
     }
-  ],
-  "schedule": ["every sunday"]
+  ]
 }
