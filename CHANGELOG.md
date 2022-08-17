@@ -1,3 +1,23 @@
+# [5.0.0](https://github.com/jorgebodega/typeorm-seeding/compare/v4.0.0...v5.0.0) (2022-08-01)
+
+
+### Bug Fixes
+
+* add factory deprecation notice ([8d75e05](https://github.com/jorgebodega/typeorm-seeding/commit/8d75e05e43b35e770f7c14437a1e6b04c8fffd01))
+* update dependency glob to v8 ([2d3c996](https://github.com/jorgebodega/typeorm-seeding/commit/2d3c99635fcfdd667b38a4bed60d663145dd619b))
+
+
+### Features
+
+* removed unused command and add some more tests ([ea6649e](https://github.com/jorgebodega/typeorm-seeding/commit/ea6649e98261d62907118448b047987cbebcd2c7))
+* use typeorm 0.3 ([aa0153b](https://github.com/jorgebodega/typeorm-seeding/commit/aa0153bd050c60ab94f9979eff4e5ab9bec81645))
+
+
+### BREAKING CHANGES
+
+* Removed config command
+* Connection API is deprecated and removed.
+
 # [5.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v5.0.0-next.1...v5.0.0-next.2) (2022-08-01)
 
 
