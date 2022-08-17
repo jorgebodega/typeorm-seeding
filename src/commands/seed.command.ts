@@ -6,6 +6,7 @@ import { Seeder } from '../seeder'
 import { useSeeders } from '../helpers/useSeeders'
 import { calculateFilePath } from '../utils/fileHandling'
 import type { Constructable } from '../types'
+import { useDataSource } from '../helpers'
 
 interface SeedCommandArguments extends Arguments {
   dataSource?: string
@@ -73,6 +74,8 @@ export class SeedCommand implements CommandModule {
     // Run seeder
     spinner.start(`Executing seeders`)
     try {
+      await useDataSource(dataSource)
+
       for (const seeder of seeders) {
         await useSeeders(seeder)
         spinner.succeed(`Seeder ${seeder.name} executed`)
@@ -148,7 +151,7 @@ export class SeedCommand implements CommandModule {
     for (const fileExport in seederFileExports) {
       const seederExport = seederFileExports[fileExport]
       const instance = new seederExport()
-      if (instance instanceof DataSource) {
+      if (instance instanceof Seeder) {
         seeders.push(seederExport)
       }
     }
