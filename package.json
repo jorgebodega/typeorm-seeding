@@ -34,7 +34,6 @@
     "schema:log": "ts-node ./node_modules/typeorm/cli.js schema:log",
     "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
     "seed:run": "ts-node ./src/cli.ts seed",
-    "seed:config": "ts-node ./src/cli.ts config",
     "test": "jest",
     "test:ci": "jest --silent",
     "test:cov": "jest --coverage --silent",
@@ -43,6 +42,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "7.4.0",
+    "@jorgebodega/typeorm-factory": "1.1.3",
     "@tsconfig/node16": "1.0.3",
     "@types/glob": "7.2.0",
     "@types/jest": "28.1.7",

@@ -1,10 +1,11 @@
 import { faker } from '@faker-js/faker'
-import { Factory } from '../../src/factory'
-import type { FactorizedAttrs } from '../../src/types'
+import { FactorizedAttrs, Factory } from '@jorgebodega/typeorm-factory'
 import { User } from '../fixtures/User.entity'
+import { dataSource } from './dataSource'
 
 export class UserFactory extends Factory<User> {
   protected entity = User
+  protected dataSource = dataSource
 
   protected attrs(): FactorizedAttrs<User> {
     return {
