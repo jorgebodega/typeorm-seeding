@@ -1,9 +1,9 @@
 import { useDataSource, useSeeders } from '../../src'
-import { dataSource } from '../fixtures/dataSource'
 import { Pet } from '../fixtures/Pet.entity'
 import PetSeeder from '../fixtures/Pet.seeder'
 import { User } from '../fixtures/User.entity'
 import UserSeeder from '../fixtures/User.seeder'
+import { dataSource } from '../fixtures/dataSource'
 
 describe(useSeeders, () => {
   beforeAll(async () => {

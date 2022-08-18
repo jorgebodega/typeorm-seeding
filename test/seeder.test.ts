@@ -1,7 +1,7 @@
 import { Seeder, useDataSource } from '../src'
-import { dataSource } from './fixtures/dataSource'
 import { User } from './fixtures/User.entity'
 import UserSeeder from './fixtures/User.seeder'
+import { dataSource } from './fixtures/dataSource'
 
 describe(Seeder, () => {
   beforeAll(async () => {

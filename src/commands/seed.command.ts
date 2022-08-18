@@ -2,13 +2,13 @@ import { resolve } from 'node:path'
 import { Command } from 'commander'
 import ora from 'ora'
 import { DataSource } from 'typeorm'
-import { Constructable, SeedCommandArguments } from '../types'
-import { Seeder } from '../seeder'
-import { useDataSource, useSeeders } from '../helpers'
-import { calculateFilePath, CommandUtils } from '../utils'
-import { DataSourceImportationError } from '../errors/DataSourceLoadError'
 import { SeederImportationError } from '../errors'
+import { DataSourceImportationError } from '../errors/DataSourceImportationError'
 import { SeederExecutionError } from '../errors/SeederExecutionError'
+import { useDataSource, useSeeders } from '../helpers'
+import { Seeder } from '../seeder'
+import { Constructable, SeedCommandArguments } from '../types'
+import { calculateFilePath, CommandUtils } from '../utils'
 
 async function run(path: string) {
   const opts = seedCommand.opts<SeedCommandArguments>()

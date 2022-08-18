@@ -1,12 +1,10 @@
-import { SeederImportationError, useDataSource } from '../src'
+import { SeederImportationError } from '../src'
 import { bootstrap } from '../src/commands/seed.command'
-import { DataSourceImportationError } from '../src/errors/DataSourceLoadError'
+import { DataSourceImportationError } from '../src/errors/DataSourceImportationError'
 import { SeederExecutionError } from '../src/errors/SeederExecutionError'
-import { dataSource } from './fixtures/dataSource'
-import { Pet } from './fixtures/Pet.entity'
 import PetSeeder from './fixtures/Pet.seeder'
-import { User } from './fixtures/User.entity'
 import UserSeeder from './fixtures/User.seeder'
+import { dataSource } from './fixtures/dataSource'
 
 const cli = (...argv: string[]) => bootstrap(['ts-node', 'src/cli.ts', ...argv])
 

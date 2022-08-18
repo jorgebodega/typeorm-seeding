@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker'
 import { FactorizedAttrs, Factory, LazyInstanceAttribute, SingleSubfactory } from '@jorgebodega/typeorm-factory'
-import { dataSource } from './dataSource'
 import { Pet } from './Pet.entity'
 import { UserFactory } from './User.factory'
+import { dataSource } from './dataSource'
 
 export class PetFactory extends Factory<Pet> {
   protected entity = Pet
