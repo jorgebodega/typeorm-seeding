@@ -11,11 +11,7 @@ describe(useSeeders, () => {
   })
 
   beforeEach(async () => {
-    await dataSource.synchronize()
-  })
-
-  afterEach(async () => {
-    await dataSource.dropDatabase()
+    await dataSource.synchronize(true)
   })
 
   afterAll(async () => {

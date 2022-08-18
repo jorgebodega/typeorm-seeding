@@ -14,14 +14,14 @@ export class DataSourceManager {
   }
 
   get dataSource(): DataSource {
-    if (this._dataSource === undefined) {
+    if (!this._dataSource) {
       throw new DataSourceNotProvidedError()
     }
 
     return this._dataSource
   }
 
-  set dataSource(dataSource: DataSource) {
+  set dataSource(dataSource: DataSource | undefined) {
     this._dataSource = dataSource
   }
 }

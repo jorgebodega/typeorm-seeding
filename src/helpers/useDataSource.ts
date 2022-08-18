@@ -26,7 +26,7 @@ export async function useDataSource(
     dataSource.setOptions(overrideOptions)
   }
 
-  if (shouldInitilialize) {
+  if (shouldInitilialize && !dataSource.isInitialized) {
     await dataSource.initialize()
   }
 

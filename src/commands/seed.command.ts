@@ -1,161 +1,74 @@
 import { resolve } from 'node:path'
+import { Command } from 'commander'
 import ora from 'ora'
 import { DataSource } from 'typeorm'
-import { Arguments, Argv, CommandModule, showHelp } from 'yargs'
+import { Constructable, SeedCommandArguments } from '../types'
 import { Seeder } from '../seeder'
-import { useSeeders } from '../helpers/useSeeders'
-import { calculateFilePath } from '../utils/fileHandling'
-import type { Constructable } from '../types'
-import { useDataSource } from '../helpers'
+import { useDataSource, useSeeders } from '../helpers'
+import { calculateFilePath, CommandUtils } from '../utils'
+import { DataSourceImportationError } from '../errors/DataSourceLoadError'
+import { SeederImportationError } from '../errors'
+import { SeederExecutionError } from '../errors/SeederExecutionError'
 
-interface SeedCommandArguments extends Arguments {
-  dataSource?: string
-  path?: string
+async function run(path: string) {
+  const opts = seedCommand.opts<SeedCommandArguments>()
+  const spinner = ora({ isSilent: process.env.NODE_ENV === 'test' }).start()
+
+  spinner.start('Loading datasource')
+  let dataSource!: DataSource
+  try {
+    const dataSourcePath = resolve(process.cwd(), opts.dataSource)
+
+    dataSource = await CommandUtils.loadDataSource(dataSourcePath)
+
+    spinner.succeed('Datasource loaded')
+  } catch (error: any) {
+    spinner.fail('Could not load the data source!')
+    throw new DataSourceImportationError('Could not load the data source!', { cause: error })
+  }
+
+  spinner.start('Importing seeders')
+  let seeders!: Constructable<Seeder>[]
+  try {
+    const seederFiles = calculateFilePath(path)
+
+    seeders = await CommandUtils.loadSeeders(seederFiles)
+
+    spinner.succeed('Seeder imported')
+  } catch (error: any) {
+    spinner.fail('Could not load seeders!')
+    throw new SeederImportationError('Could not load seeders!', { cause: error })
+  }
+
+  spinner.info(`Executing seeders...`)
+  try {
+    await useDataSource(dataSource, true)
+
+    for (const seeder of seeders) {
+      spinner.start(`Executing ${seeder.name}`)
+      await useSeeders(seeder)
+      spinner.succeed(`Seeder ${seeder.name} executed`)
+    }
+  } catch (error: any) {
+    spinner.fail('Could not execute seeder!')
+    await dataSource.destroy()
+    throw new SeederExecutionError('Could not execute seeder!', { cause: error })
+  }
+
+  spinner.succeed('Finished seeding')
+  await dataSource.destroy()
 }
 
-export class SeedCommand implements CommandModule {
-  command = 'seed <path>'
-  describe = 'Runs the seeders'
+const seedCommand = new Command('seed')
+  .description('Run the seeders specified by the path. Glob pattern is allowed.')
+  .requiredOption(
+    '-d, --dataSource <dataSourcePath>',
+    'Path to the file where your DataSource instance is defined.',
+    './datasource.ts',
+  )
+  .argument('<path>', 'Path to the seeders. Glob pattern is allowed.')
+  .action(run)
 
-  /**
-   * @inheritdoc
-   */
-  builder(args: Argv) {
-    return args
-      .option('d', {
-        alias: 'dataSource',
-        type: 'string',
-        describe: 'Path to the file where your DataSource instance is defined.',
-        required: true,
-      })
-      .fail((message, error: Error) => {
-        if (error) throw error // preserve stack
-        else {
-          console.error(message)
-          showHelp()
-        }
-      })
-  }
-
-  /**
-   * @inheritdoc
-   */
-  async handler(args: SeedCommandArguments) {
-    const spinner = ora({ isSilent: process.env.NODE_ENV === 'test' }).start()
-
-    spinner.start('Loading datasource')
-    let dataSource!: DataSource
-    try {
-      const dataSourcePath = resolve(process.cwd(), args.dataSource as string)
-
-      dataSource = await SeedCommand.loadDataSource(dataSourcePath)
-
-      spinner.succeed('Datasource loaded')
-    } catch (error) {
-      spinner.fail('Could not load the data source!')
-      throw error
-    }
-
-    spinner.start('Importing seeders')
-    let seeders!: Constructable<Seeder>[]
-    try {
-      const absolutePath = resolve(process.cwd(), args.path as string)
-      const seederFiles = calculateFilePath(absolutePath)
-
-      seeders = await SeedCommand.loadSeeders(seederFiles)
-
-      spinner.succeed('Seeder imported')
-    } catch (error) {
-      spinner.fail('Could not load seeders!')
-      await dataSource.destroy()
-      throw error
-    }
-
-    // Run seeder
-    spinner.start(`Executing seeders`)
-    try {
-      await useDataSource(dataSource)
-
-      for (const seeder of seeders) {
-        await useSeeders(seeder)
-        spinner.succeed(`Seeder ${seeder.name} executed`)
-      }
-    } catch (error) {
-      spinner.fail('Could not execute seeder!')
-      await dataSource.destroy()
-      throw error
-    }
-
-    spinner.succeed('Finished seeding')
-    await dataSource.destroy()
-  }
-
-  static async loadDataSource(dataSourceFilePath: string): Promise<DataSource> {
-    let dataSourceFileExports
-    try {
-      dataSourceFileExports = await import(dataSourceFilePath)
-    } catch (err) {
-      throw new Error(`Unable to open file: "${dataSourceFilePath}"`)
-    }
-
-    if (!dataSourceFileExports || typeof dataSourceFileExports !== 'object') {
-      throw new Error(`Given data source file must contain export of a DataSource instance`)
-    }
-
-    const dataSourceExports: DataSource[] = []
-    for (const fileExport in dataSourceFileExports) {
-      const dataSourceExport = dataSourceFileExports[fileExport]
-      if (dataSourceExport instanceof DataSource) {
-        dataSourceExports.push(dataSourceExport)
-      }
-    }
-
-    if (dataSourceExports.length === 0) {
-      throw new Error(`Given data source file must contain export of a DataSource instance`)
-    }
-    if (dataSourceExports.length > 1) {
-      throw new Error(`Given data source file must contain only one export of DataSource instance`)
-    }
-
-    const dataSource = dataSourceExports[0]
-    dataSource.setOptions({
-      synchronize: false,
-      migrationsRun: false,
-      dropSchema: false,
-      logging: false,
-    })
-    await dataSource.initialize()
-
-    return dataSource
-  }
-
-  static async loadSeeders(seederPaths: string[]): Promise<Constructable<Seeder>[]> {
-    let seederFileExports
-    try {
-      seederFileExports = await Promise.all(seederPaths.map((seederFile) => import(seederFile))).then(
-        (seederExports) => {
-          return seederExports
-            .map((seederExport) => seederExport.default)
-            .filter((seederExport) => Boolean(seederExport))
-        },
-      )
-    } catch (err) {
-      throw new Error(`Unable to open files ${(err as Error).message}`)
-    }
-
-    if (seederFileExports.length === 0) {
-      throw new Error(`No default seeders found`)
-    }
-
-    const seeders: Constructable<Seeder>[] = []
-    for (const fileExport in seederFileExports) {
-      const seederExport = seederFileExports[fileExport]
-      const instance = new seederExport()
-      if (instance instanceof Seeder) {
-        seeders.push(seederExport)
-      }
-    }
-
-    return seeders
-  }
+export async function bootstrap(argv: string[]) {
+  await seedCommand.parseAsync(argv)
 }

@@ -30,9 +30,6 @@
     "lint:fix": "pnpm lint --fix",
     "lint:ci": "pnpm lint",
     "prebuild": "rimraf dist",
-    "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
-    "schema:log": "ts-node ./node_modules/typeorm/cli.js schema:log",
-    "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
     "seed:run": "ts-node ./src/cli.ts seed",
     "test": "jest",
     "test:ci": "jest --silent",
@@ -47,7 +44,6 @@
     "@types/glob": "7.2.0",
     "@types/jest": "28.1.7",
     "@types/node": "18.7.6",
-    "@types/yargs": "17.0.11",
     "@typescript-eslint/eslint-plugin": "5.33.1",
     "@typescript-eslint/parser": "5.33.1",
     "eslint": "8.22.0",
@@ -64,11 +60,10 @@
   },
   "dependencies": {
     "chalk": "4.1.2",
+    "commander": "9.4.0",
     "glob": "8.0.3",
     "ora": "5.4.1",
-    "reflect-metadata": "0.1.13",
-    "tslib": "2.4.0",
-    "yargs": "17.5.1"
+    "tslib": "2.4.0"
   },
   "peerDependencies": {
     "typeorm": "^0.3.0"

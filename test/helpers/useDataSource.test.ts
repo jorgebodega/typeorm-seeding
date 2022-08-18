@@ -38,16 +38,6 @@ describe(useDataSource, () => {
         database: 'test.sql',
       })
     })
-
-    describe('With initialization flag', () => {
-      test('Should raise error with initialization flag', async () => {
-        await expect(useDataSource(dataSource, true)).rejects.toThrow(Error)
-      })
-
-      test('Should raise error with initialization flag and options override', async () => {
-        await expect(useDataSource(dataSource, { database: 'test.sql' }, true)).rejects.toThrow(Error)
-      })
-    })
   })
 
   describe('With non initialized data source', () => {

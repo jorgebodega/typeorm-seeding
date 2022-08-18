@@ -6,6 +6,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "outDir": "dist",
+    "lib": ["es2022"],
     "target": "es2020",
     "sourceMap": true
   }
