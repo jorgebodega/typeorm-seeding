@@ -385,7 +385,7 @@ Add the following scripts to your `package.json` file to configure them.
 This command execute a seeder, that could be specified as a parameter.
 
 ```bash
-typeorm-seeding seed
+typeorm-seeding seed <path>
 ```
 
 The name of the seeder to execute (either set with the `--seed` option or with default in [configs](#configuration)) must be the seeder's class name, and thus, the seeder must be exported with a named export. Please avoid default export for seeders: it may imply unwanted behavior. (See [\#75](https://github.com/jorgebodega/typeorm-seeding/issues/75)).
@@ -394,10 +394,7 @@ The name of the seeder to execute (either set with the `--seed` option or with d
 
 | Option                 | Default                              | Description                                           |
 | ---------------------- | ------------------------------------ | ----------------------------------------------------- |
-| `--seed` or `-s`       | Default seeder specified config file | Option to specify a seeder class to run individually. |
 | `--dataSource` or `-d` |                                      | Path of the data source                               |
-| `--configName` or `-n` | TypeORM default value                | Name to the TypeORM config file.                      |
-| `--root` or `-r`       | TypeORM default value                | Path to the TypeORM config file.                      |
 
 # Testing features
 
