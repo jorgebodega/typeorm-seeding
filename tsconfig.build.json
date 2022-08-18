@@ -1,4 +1,11 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["node_modules", "dist", "test", "jest.config.ts"]
+  "exclude": ["node_modules", "dist", "test", "jest.config.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "importHelpers": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "es2020"
+  }
 }
