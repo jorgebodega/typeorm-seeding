@@ -10,7 +10,7 @@ import { Seeder } from '../seeder'
 import { Constructable, SeedCommandArguments } from '../types'
 import { calculateFilePath, CommandUtils } from '../utils'
 
-async function run(path: string) {
+async function run(paths: string[]) {
   const opts = seedCommand.opts<SeedCommandArguments>()
   const spinner = ora({ isSilent: process.env.NODE_ENV === 'test' }).start()
 
@@ -30,7 +30,7 @@ async function run(path: string) {
   spinner.start('Importing seeders')
   let seeders!: Constructable<Seeder>[]
   try {
-    const seederFiles = calculateFilePath(path)
+    const seederFiles = paths.flatMap(calculateFilePath)
 
     seeders = await CommandUtils.loadSeeders(seederFiles)
 
@@ -66,7 +66,7 @@ const seedCommand = new Command('seed')
     'Path to the file where your DataSource instance is defined.',
     './datasource.ts',
   )
-  .argument('<path>', 'Path to the seeders. Glob pattern is allowed.')
+  .argument('<path...>', 'Paths to the seeders. Glob pattern is allowed.')
   .action(run)
 
 export async function bootstrap(argv: string[]) {
