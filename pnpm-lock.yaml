@@ -4,7 +4,7 @@ specifiers:
   '@faker-js/faker': 7.5.0
   '@jorgebodega/typeorm-factory': 1.2.0
   '@tsconfig/node16': 1.0.3
-  '@types/glob': 7.2.0
+  '@types/glob': 8.0.0
   '@types/jest': 28.1.8
   '@types/node': 18.7.6
   '@typescript-eslint/eslint-plugin': 5.36.1
@@ -37,7 +37,7 @@ devDependencies:
   '@faker-js/faker': 7.5.0
   '@jorgebodega/typeorm-factory': 1.2.0_typeorm@0.3.9
   '@tsconfig/node16': 1.0.3
-  '@types/glob': 7.2.0
+  '@types/glob': 8.0.0
   '@types/jest': 28.1.8
   '@types/node': 18.7.6
   '@typescript-eslint/eslint-plugin': 5.36.1_lbwfnm54o3pmr3ypeqp3btnera
@@ -855,8 +855,8 @@ packages:
       '@babel/types': 7.18.10
     dev: true
 
-  /@types/glob/7.2.0:
-    resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
+  /@types/glob/8.0.0:
+    resolution: {integrity: sha512-l6NQsDDyQUVeoTynNpC9uRvCUint/gSUXQA2euwmTuWGvPY5LSDUu6tkCtJB2SvGQlJQzLaKqcGZP4//7EDveA==}
     dependencies:
       '@types/minimatch': 3.0.5
       '@types/node': 18.7.6

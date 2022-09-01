@@ -41,7 +41,7 @@
     "@faker-js/faker": "7.5.0",
     "@jorgebodega/typeorm-factory": "1.2.0",
     "@tsconfig/node16": "1.0.3",
-    "@types/glob": "7.2.0",
+    "@types/glob": "8.0.0",
     "@types/jest": "28.1.8",
     "@types/node": "18.7.6",
     "@typescript-eslint/eslint-plugin": "5.36.1",
