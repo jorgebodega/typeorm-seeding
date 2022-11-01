@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@faker-js/faker': 7.6.0
-  '@jorgebodega/typeorm-factory': 1.2.0
+  '@jorgebodega/typeorm-factory': 1.3.0
   '@tsconfig/node16': 1.0.3
   '@types/glob': 8.0.0
   '@types/jest': 29.2.1
@@ -35,7 +35,7 @@ dependencies:
 
 devDependencies:
   '@faker-js/faker': 7.6.0
-  '@jorgebodega/typeorm-factory': 1.2.0_typeorm@0.3.10
+  '@jorgebodega/typeorm-factory': 1.3.0_typeorm@0.3.10
   '@tsconfig/node16': 1.0.3
   '@types/glob': 8.0.0
   '@types/jest': 29.2.1
@@ -678,13 +678,13 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@jorgebodega/typeorm-factory/1.2.0_typeorm@0.3.10:
-    resolution: {integrity: sha512-/Hv//5E/MPswRI+UUh+ORjy8bMPqDx4LC/VlTY+lVIU1Fkq8W4tVZxlAJsom6Dwd89eMu984eFmob3rJtrWagA==}
+  /@jorgebodega/typeorm-factory/1.3.0_typeorm@0.3.10:
+    resolution: {integrity: sha512-5fXbanLjGQXtxu46nL8mZ5pq0AQ6yIaYeTjyQ8qMNlw4Dy4hNiBNuvpAN0VycAhGcu91+TvraQyvTCZVMw7l4w==}
     engines: {node: '>=14'}
     peerDependencies:
       typeorm: ^0.3.0
     dependencies:
-      tslib: 2.4.0
+      tslib: 2.4.1
       typeorm: 0.3.10_pmxns7ckow5hp64uzurbpl2oxu
     dev: true
 
@@ -4143,10 +4143,6 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
-
-  /tslib/2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
   /tslib/2.4.1:
