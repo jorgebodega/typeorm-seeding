@@ -42,7 +42,7 @@
     "@jorgebodega/typeorm-factory": "1.2.0",
     "@tsconfig/node16": "1.0.3",
     "@types/glob": "8.0.0",
-    "@types/jest": "29.2.0",
+    "@types/jest": "29.2.1",
     "@types/node": "18.11.8",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
@@ -63,7 +63,7 @@
     "commander": "9.4.1",
     "glob": "8.0.3",
     "ora": "5.4.1",
-    "tslib": "2.4.0"
+    "tslib": "2.4.1"
   },
   "peerDependencies": {
     "typeorm": "^0.3.0"
