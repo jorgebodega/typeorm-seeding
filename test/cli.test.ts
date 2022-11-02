@@ -33,9 +33,12 @@ describe('Seed command', () => {
     const userRunFn = jest.spyOn(UserSeeder.prototype, 'run')
     const petRunFn = jest.spyOn(PetSeeder.prototype, 'run')
 
-    beforeEach(async () => {
+    beforeAll(async () => {
       await dataSource.initialize()
-      await dataSource.synchronize()
+    })
+
+    beforeEach(async () => {
+      await dataSource.synchronize(true)
 
       userRunFn.mockReset()
       petRunFn.mockReset()
@@ -43,31 +46,23 @@ describe('Seed command', () => {
 
     afterEach(async () => {
       await dataSource.initialize()
-      await dataSource.dropDatabase()
+    })
+
+    afterAll(async () => {
       await dataSource.destroy()
     })
 
     test('Should seed with only one seeder provided', async () => {
-      const runFn = jest.spyOn(UserSeeder.prototype, 'run')
-
       await cli('-d', './test/fixtures/dataSource.ts', './test/fixtures/User.seeder.ts')
 
-      expect(runFn).toHaveBeenCalledTimes(1)
-
-      runFn.mockReset()
+      expect(userRunFn).toHaveBeenCalledTimes(1)
     })
 
     test('Should seed with multiple seeders provided', async () => {
-      const userRunFn = jest.spyOn(UserSeeder.prototype, 'run')
-      const petRunFn = jest.spyOn(PetSeeder.prototype, 'run')
-
       await cli('-d', './test/fixtures/dataSource.ts', './test/fixtures/*.seeder.ts')
 
       expect(userRunFn).toHaveBeenCalledTimes(1)
       expect(petRunFn).toHaveBeenCalledTimes(1)
-
-      userRunFn.mockReset()
-      petRunFn.mockReset()
     })
   })
 })

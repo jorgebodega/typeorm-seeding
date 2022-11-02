@@ -139,7 +139,7 @@ Add the following script to your `package.json` file to configure them.
 This command execute a seeder, that could be specified as a parameter. Glob pattern is supported.
 
 ```bash
-typeorm-seeding seed <paths>
+typeorm-seeding -d [...] seed <paths>
 ```
 
 CLI command only executes default seeders.
