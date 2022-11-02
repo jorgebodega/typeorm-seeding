@@ -3,8 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
+        description: 'Check release instead of publishing'
+        default: "false"
         required: false
-        default: false
 jobs:
   release:
     name: Generate a new release
@@ -16,7 +17,7 @@ jobs:
           version: latest
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/gallium
+          node-version-file: '.nvmrc'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build

@@ -15,7 +15,7 @@ jobs:
           version: latest
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/gallium
+          node-version-file: '.nvmrc'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test:cov
