@@ -9,6 +9,8 @@ import { dataSource } from './fixtures/dataSource'
 const cli = (...argv: string[]) => bootstrap(['ts-node', 'src/cli.ts', ...argv])
 
 describe('Seed command', () => {
+  const userRunFn = jest.spyOn(UserSeeder.prototype, 'run')
+
   test('Should fail without valid data source', async () => {
     await expect(cli('-d', './invalidDataSource.ts', '')).rejects.toThrow(DataSourceImportationError)
   })
@@ -20,7 +22,7 @@ describe('Seed command', () => {
   })
 
   test('Should fail with bad seeder', async () => {
-    jest.spyOn(UserSeeder.prototype, 'run').mockImplementationOnce(async () => {
+    userRunFn.mockImplementationOnce(async () => {
       throw new Error()
     })
 
@@ -30,7 +32,6 @@ describe('Seed command', () => {
   })
 
   describe('Should execute seeders', () => {
-    const userRunFn = jest.spyOn(UserSeeder.prototype, 'run')
     const petRunFn = jest.spyOn(PetSeeder.prototype, 'run')
 
     beforeAll(async () => {
