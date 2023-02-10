@@ -20,9 +20,9 @@
     "@tsconfig/node16": "1.0.3",
     "@types/glob": "8.0.1",
     "@types/jest": "29.4.0",
-    "@types/node": "18.11.19",
-    "@typescript-eslint/eslint-plugin": "5.49.0",
-    "@typescript-eslint/parser": "5.49.0",
+    "@types/node": "18.13.0",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
+    "@typescript-eslint/parser": "5.51.0",
     "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-import": "2.27.5",
@@ -47,7 +47,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "name": "@jorgebodega/typeorm-seeding",
-  "packageManager": "pnpm@7.26.3",
+  "packageManager": "pnpm@7.27.0",
   "peerDependencies": {
     "typeorm": "^0.3.0"
   },
