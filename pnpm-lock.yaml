@@ -23,7 +23,7 @@ specifiers:
   ts-jest: 29.0.5
   ts-node: 10.9.1
   tslib: 2.5.0
-  typeorm: 0.3.11
+  typeorm: 0.3.12
   typescript: 4.9.5
 
 dependencies:
@@ -35,7 +35,7 @@ dependencies:
 
 devDependencies:
   '@faker-js/faker': 7.6.0
-  '@jorgebodega/typeorm-factory': 1.4.0_typeorm@0.3.11
+  '@jorgebodega/typeorm-factory': 1.4.0_typeorm@0.3.12
   '@tsconfig/node16': 1.0.3
   '@types/glob': 8.0.1
   '@types/jest': 29.4.0
@@ -51,7 +51,7 @@ devDependencies:
   sqlite3: 5.1.4
   ts-jest: 29.0.5_orzzknleilowtsz34rkaotjvzm
   ts-node: 10.9.1_tncu2ai53lzgmizdedur7lbibe
-  typeorm: 0.3.11_h3l5zcb3i6sggvllyfknv6gs44
+  typeorm: 0.3.12_h3l5zcb3i6sggvllyfknv6gs44
   typescript: 4.9.5
 
 packages:
@@ -692,14 +692,14 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@jorgebodega/typeorm-factory/1.4.0_typeorm@0.3.11:
+  /@jorgebodega/typeorm-factory/1.4.0_typeorm@0.3.12:
     resolution: {integrity: sha512-c02QHz1FcR8w4Tzv2Ibf2SvxF4LYlna0DktNT9kfMFkMajcbP94KBN4EBpP4ECU/0baY1pflzhFhphlGErUamA==}
     engines: {node: '>=14'}
     peerDependencies:
       typeorm: ^0.3.0
     dependencies:
       tslib: 2.4.1
-      typeorm: 0.3.11_h3l5zcb3i6sggvllyfknv6gs44
+      typeorm: 0.3.12_h3l5zcb3i6sggvllyfknv6gs44
     dev: true
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -824,8 +824,8 @@ packages:
       '@sinonjs/commons': 2.0.0
     dev: true
 
-  /@sqltools/formatter/1.2.3:
-    resolution: {integrity: sha512-O3uyB/JbkAEMZaP3YqyHH7TMnex7tWyCbCI4EfJdOCoN6HIhqdJBWTM6aCCiWQ/5f5wxjgU735QAIpJbjDvmzg==}
+  /@sqltools/formatter/1.2.5:
+    resolution: {integrity: sha512-Uy0+khmZqUrUGm5dmMqVlnvufZRSK0FbYzVgp0UMstm+F5+W2/jnEEQyc9vo1ZR/E5ZI/B1WjjoTqBqwJL6Krw==}
     dev: true
 
   /@tootallnate/once/1.1.2:
@@ -1364,7 +1364,6 @@ packages:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
     dependencies:
       balanced-match: 1.0.2
-    dev: false
 
   /braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==}
@@ -1541,6 +1540,15 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
+  /cliui/8.0.1:
+    resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wrap-ansi: 7.0.0
+    dev: true
+
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
@@ -1615,8 +1623,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /date-fns/2.29.1:
-    resolution: {integrity: sha512-dlLD5rKaKxpFdnjrs+5azHDFOPEu4ANy/LTh04A1DTzMM7qoajmKCBc8pkKRFT41CNzw+4gQh79X5C+Jq27HAw==}
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
     dev: true
 
@@ -1721,8 +1729,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dotenv/16.0.1:
-    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
     dev: true
 
@@ -2317,7 +2325,6 @@ packages:
       inherits: 2.0.4
       minimatch: 5.1.0
       once: 1.4.0
-    dev: false
 
   /globals/11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -3373,7 +3380,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
-    dev: false
 
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
@@ -3440,6 +3446,12 @@ packages:
 
   /mkdirp/1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: true
+
+  /mkdirp/2.1.3:
+    resolution: {integrity: sha512-sjAkg21peAG9HS+Dkx7hlG9Ztx7HLeKnvB3NQRcu/mltCVmvkF0pisbiTSfDVYTT86XEfZrTUosLdZLStquZUw==}
     engines: {node: '>=10'}
     hasBin: true
     dev: true
@@ -4345,8 +4357,8 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typeorm/0.3.11_h3l5zcb3i6sggvllyfknv6gs44:
-    resolution: {integrity: sha512-pzdOyWbVuz/z8Ww6gqvBW4nylsM0KLdUCDExr2gR20/x1khGSVxQkjNV/3YqliG90jrWzrknYbYscpk8yxFJVg==}
+  /typeorm/0.3.12_h3l5zcb3i6sggvllyfknv6gs44:
+    resolution: {integrity: sha512-sYSxBmCf1nJLLTcYtwqZ+lQIRtLPyUoO93rHTOKk9vJCyT4UfRtU7oRsJvfvKP3nnZTD1hzz2SEy2zwPEN6OyA==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
     peerDependencies:
@@ -4357,7 +4369,7 @@ packages:
       ioredis: ^5.0.4
       mongodb: ^3.6.0
       mssql: ^7.3.0
-      mysql2: ^2.2.5
+      mysql2: ^2.2.5 || ^3.0.1
       oracledb: ^5.1.0
       pg: ^8.5.1
       pg-native: ^3.0.0
@@ -4403,25 +4415,25 @@ packages:
       typeorm-aurora-data-api-driver:
         optional: true
     dependencies:
-      '@sqltools/formatter': 1.2.3
+      '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
-      date-fns: 2.29.1
+      date-fns: 2.29.3
       debug: 4.3.4
-      dotenv: 16.0.1
-      glob: 7.2.3
+      dotenv: 16.0.3
+      glob: 8.1.0
       js-yaml: 4.1.0
-      mkdirp: 1.0.4
+      mkdirp: 2.1.3
       reflect-metadata: 0.1.13
       sha.js: 2.4.11
       sqlite3: 5.1.4
       ts-node: 10.9.1_tncu2ai53lzgmizdedur7lbibe
       tslib: 2.5.0
-      uuid: 8.3.2
+      uuid: 9.0.0
       xml2js: 0.4.23
-      yargs: 17.5.1
+      yargs: 17.7.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4475,8 +4487,8 @@ packages:
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  /uuid/8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
     hasBin: true
     dev: true
 
@@ -4627,6 +4639,19 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       cliui: 7.0.4
+      escalade: 3.1.1
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      string-width: 4.2.3
+      y18n: 5.0.8
+      yargs-parser: 21.1.1
+    dev: true
+
+  /yargs/17.7.0:
+    resolution: {integrity: sha512-dwqOPg5trmrre9+v8SUo2q/hAwyKoVfu8OC1xPHKJGNdxAvPl4sKxL4vBnh3bQz/ZvvGAFeA5H3ou2kcOY8sQQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      cliui: 8.0.1
       escalade: 3.1.1
       get-caller-file: 2.0.5
       require-directory: 2.1.1
