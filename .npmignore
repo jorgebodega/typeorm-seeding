@@ -5,7 +5,7 @@
 /test
 .editorconfig
 .eslintrc.js
-.nvmrc
+.node-version
 .prettierrc
 .releaserc.json
 .sgcrc
