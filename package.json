@@ -15,7 +15,7 @@
   },
   "description": "🌱 A delightful way to seed test data into your database.",
   "devDependencies": {
-    "@faker-js/faker": "7.6.0",
+    "@faker-js/faker": "8.0.1",
     "@jorgebodega/typeorm-factory": "1.4.0",
     "@tsconfig/node18-strictest": "1.0.0",
     "@types/glob": "8.1.0",
