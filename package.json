@@ -47,7 +47,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "name": "@jorgebodega/typeorm-seeding",
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.6.0",
   "peerDependencies": {
     "typeorm": "^0.3.0"
   },
