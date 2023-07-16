@@ -9,9 +9,9 @@
   "dependencies": {
     "chalk": "4.1.2",
     "commander": "10.0.1",
-    "glob": "10.2.7",
+    "glob": "10.3.3",
     "ora": "5.4.1",
-    "tslib": "2.5.3"
+    "tslib": "2.6.0"
   },
   "description": "🌱 A delightful way to seed test data into your database.",
   "devDependencies": {
@@ -23,10 +23,10 @@
     "@types/node": "18.16.19",
     "@typescript-eslint/eslint-plugin": "6.0.0",
     "@typescript-eslint/parser": "6.0.0",
-    "eslint": "8.43.0",
+    "eslint": "8.45.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
-    "jest": "29.5.0",
+    "jest": "29.6.1",
     "prettier": "2.8.8",
     "rimraf": "5.0.1",
     "sqlite3": "5.1.6",
