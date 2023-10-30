@@ -1,6 +1,12 @@
 {
-  "extends": "@tsconfig/node18-strictest",
-  "exclude": ["dist", "coverage"],
+  "extends": [
+    "@tsconfig/strictest/tsconfig",
+    "@tsconfig/node20/tsconfig"
+  ],
+  "exclude": [
+    "dist",
+    "coverage"
+  ],
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
