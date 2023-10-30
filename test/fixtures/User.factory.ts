@@ -9,9 +9,9 @@ export class UserFactory extends Factory<User> {
 
   protected attrs(): FactorizedAttrs<User> {
     return {
-      name: faker.name.firstName(),
-      lastName: faker.name.lastName(),
-      age: faker.datatype.number({ min: 18, max: 65 }),
+      name: faker.person.firstName(),
+      lastName: faker.person.lastName(),
+      age: faker.number.int({ min: 18, max: 65 }),
       email: faker.internet.email(),
       pets: [],
     }
