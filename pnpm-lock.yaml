@@ -27,7 +27,7 @@ devDependencies:
     version: 8.4.1
   '@jorgebodega/typeorm-factory':
     specifier: 1.4.0
-    version: 1.4.0(typeorm@0.3.19)
+    version: 1.4.0(typeorm@0.3.20)
   '@types/glob':
     specifier: 8.1.0
     version: 8.1.0
@@ -74,8 +74,8 @@ devDependencies:
     specifier: 10.9.2
     version: 10.9.2(@types/node@20.11.22)(typescript@5.3.3)
   typeorm:
-    specifier: 0.3.19
-    version: 0.3.19(sqlite3@5.1.7)(ts-node@10.9.2)
+    specifier: 0.3.20
+    version: 0.3.20(sqlite3@5.1.7)(ts-node@10.9.2)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -742,14 +742,14 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@jorgebodega/typeorm-factory@1.4.0(typeorm@0.3.19):
+  /@jorgebodega/typeorm-factory@1.4.0(typeorm@0.3.20):
     resolution: {integrity: sha512-c02QHz1FcR8w4Tzv2Ibf2SvxF4LYlna0DktNT9kfMFkMajcbP94KBN4EBpP4ECU/0baY1pflzhFhphlGErUamA==}
     engines: {node: '>=14'}
     peerDependencies:
       typeorm: ^0.3.0
     dependencies:
       tslib: 2.4.1
-      typeorm: 0.3.19(sqlite3@5.1.7)(ts-node@10.9.2)
+      typeorm: 0.3.20(sqlite3@5.1.7)(ts-node@10.9.2)
     dev: true
 
   /@jridgewell/gen-mapping@0.1.1:
@@ -4088,8 +4088,8 @@ packages:
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
 
-  /reflect-metadata@0.1.13:
-    resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
+  /reflect-metadata@0.2.1:
+    resolution: {integrity: sha512-i5lLI6iw9AU3Uu4szRNPPEkomnkjRTaVt9hy/bn5g/oSzekBSMeLZblcjP74AW0vBabqERLLIrz+gR8QYR54Tw==}
     dev: true
 
   /regexp.prototype.flags@1.5.1:
@@ -4734,9 +4734,9 @@ packages:
       is-typed-array: 1.1.12
     dev: true
 
-  /typeorm@0.3.19(sqlite3@5.1.7)(ts-node@10.9.2):
-    resolution: {integrity: sha512-OGelrY5qEoAU80mR1iyvmUHiKCPUydL6xp6bebXzS7jyv/X70Gp/jBWRAfF4qGOfy2A7orMiGRfwsBUNbEL65g==}
-    engines: {node: '>= 12.9.0'}
+  /typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2):
+    resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
+    engines: {node: '>=16.13.0'}
     hasBin: true
     peerDependencies:
       '@google-cloud/spanner': ^5.18.0
@@ -4802,7 +4802,7 @@ packages:
       dotenv: 16.0.3
       glob: 10.3.10
       mkdirp: 2.1.6
-      reflect-metadata: 0.1.13
+      reflect-metadata: 0.2.1
       sha.js: 2.4.11
       sqlite3: 5.1.7
       ts-node: 10.9.2(@types/node@20.11.22)(typescript@5.3.3)
