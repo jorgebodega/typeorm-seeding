@@ -19,7 +19,7 @@
     "@jorgebodega/typeorm-factory": "1.4.0",
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.22",
+    "@types/node": "20.11.29",
     "@typescript-eslint/eslint-plugin": "7.3.0",
     "@typescript-eslint/parser": "7.3.0",
     "eslint": "8.57.0",
@@ -47,7 +47,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "name": "@jorgebodega/typeorm-seeding",
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.5",
   "peerDependencies": {
     "typeorm": "^0.3.0"
   },
