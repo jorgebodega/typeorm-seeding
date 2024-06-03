@@ -10,7 +10,7 @@
     "chalk": "4.1.2",
     "commander": "12.1.0",
     "glob": "10.4.1",
-    "ora": "5.4.1",
+    "ora": "8.0.1",
     "tslib": "2.6.2"
   },
   "description": "🌱 A delightful way to seed test data into your database.",
