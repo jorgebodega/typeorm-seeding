@@ -9,7 +9,7 @@
   "dependencies": {
     "chalk": "4.1.2",
     "commander": "12.0.0",
-    "glob": "10.3.10",
+    "glob": "10.3.16",
     "ora": "5.4.1",
     "tslib": "2.6.2"
   },
@@ -19,21 +19,21 @@
     "@jorgebodega/typeorm-factory": "1.4.0",
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.29",
-    "@typescript-eslint/eslint-plugin": "7.3.0",
-    "@typescript-eslint/parser": "7.3.0",
+    "@types/node": "20.11.30",
+    "@typescript-eslint/eslint-plugin": "7.3.1",
+    "@typescript-eslint/parser": "7.3.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.1",
     "jest": "29.7.0",
     "prettier": "3.2.5",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.7",
     "sqlite3": "5.1.7",
-    "ts-jest": "29.1.2",
+    "ts-jest": "29.1.4",
     "ts-node": "10.9.2",
     "typeorm": "0.3.20",
-    "typescript": "5.4.2"
+    "typescript": "5.4.5"
   },
   "engines": {
     "node": ">=18 <19 || >=20"
