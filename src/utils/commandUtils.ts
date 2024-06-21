@@ -9,11 +9,9 @@ export class CommandUtils {
   }
 
   static async loadSeeders(seederPaths: string[]): Promise<Constructable<Seeder>[]> {
-    const seederFileExports = await Promise.all(seederPaths.map((seederFile) => import(seederFile))).then(
-      (seederExports) => {
-        return seederExports.map((seederExport) => seederExport.default).filter((seederExport) => Boolean(seederExport))
-      },
-    )
+    const seederFileExports = (await Promise.all(seederPaths.map((seederFile) => import(seederFile))))
+      .map((seederExport) => seederExport.default?.default ?? seederExport.default)
+      .filter((seederExport) => Boolean(seederExport))
 
     if (seederFileExports.length === 0) {
       throw new Error(`No default seeders found`)

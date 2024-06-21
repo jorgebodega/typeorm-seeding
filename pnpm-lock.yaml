@@ -30,6 +30,12 @@ importers:
       '@jorgebodega/typeorm-factory':
         specifier: 1.4.0
         version: 1.4.0(typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.14.7)(typescript@5.5.2)))
+      '@tsconfig/node20':
+        specifier: 20.1.4
+        version: 20.1.4
+      '@tsconfig/strictest':
+        specifier: 2.0.5
+        version: 2.0.5
       '@types/glob':
         specifier: 8.1.0
         version: 8.1.0
@@ -465,6 +471,12 @@ packages:
 
   '@tsconfig/node16@1.0.3':
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
+
+  '@tsconfig/node20@20.1.4':
+    resolution: {integrity: sha512-sqgsT69YFeLWf5NtJ4Xq/xAF8p4ZQHlmGW74Nu2tD4+g5fAsposc4ZfaaPixVu4y01BEiDCWLRDCvDM5JOsRxg==}
+
+  '@tsconfig/strictest@2.0.5':
+    resolution: {integrity: sha512-ec4tjL2Rr0pkZ5hww65c+EEPYwxOi4Ryv+0MtjeaSQRJyq322Q27eOQiFbuNgw2hpL4hB1/W/HBGk3VKS43osg==}
 
   '@types/babel__core@7.1.19':
     resolution: {integrity: sha512-WEOTgRsbYkvA/KCsDwVEGkd7WAr1e3g31VHQ8zy5gul/V1qKullU/BU5I68X5v7V3GnB9eotmom4v5a5gjxorw==}
@@ -3110,6 +3122,10 @@ snapshots:
   '@tsconfig/node14@1.0.3': {}
 
   '@tsconfig/node16@1.0.3': {}
+
+  '@tsconfig/node20@20.1.4': {}
+
+  '@tsconfig/strictest@2.0.5': {}
 
   '@types/babel__core@7.1.19':
     dependencies:

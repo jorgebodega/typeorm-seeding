@@ -17,6 +17,8 @@
   "devDependencies": {
     "@faker-js/faker": "8.4.1",
     "@jorgebodega/typeorm-factory": "1.4.0",
+    "@tsconfig/node20": "20.1.4",
+    "@tsconfig/strictest": "2.0.5",
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.12",
     "@types/node": "20.14.7",
