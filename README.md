@@ -8,6 +8,9 @@
   <a href="https://github.com/semantic-release/semantic-release">
     <img src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release&style=for-the-badge" alt="Semantic release" />
   </a>
+  <a href="https://biomejs.dev/">
+    <img src="https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=for-the-badge&logo=biome" alt="Biome" />
+  </a>
   <a href='https://coveralls.io/github/jorgebodega/typeorm-seeding'>
     <img alt="Coveralls master branch" src="https://img.shields.io/coveralls/github/jorgebodega/typeorm-seeding/master?style=for-the-badge">
   </a>
