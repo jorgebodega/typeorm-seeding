@@ -2,9 +2,7 @@ import { fetchDataSource } from "../datasource";
 import type { Seeder } from "../seeder";
 import type { Constructable } from "../types";
 
-export async function useSeeders(
-	entrySeeders: Constructable<Seeder> | Constructable<Seeder>[],
-): Promise<void> {
+export async function useSeeders(entrySeeders: Constructable<Seeder> | Constructable<Seeder>[]): Promise<void> {
 	const dataSource = fetchDataSource();
 
 	const seeders = Array.isArray(entrySeeders) ? entrySeeders : [entrySeeders];

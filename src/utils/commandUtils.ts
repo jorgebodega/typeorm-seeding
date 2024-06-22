@@ -3,22 +3,14 @@ import { CommandUtils as TypeormCommandUtils } from "typeorm/commands/CommandUti
 import { Seeder } from "../seeder";
 import type { Constructable } from "../types";
 
-export async function loadDataSource(
-	dataSourceFilePath: string,
-): Promise<DataSource> {
+export async function loadDataSource(dataSourceFilePath: string): Promise<DataSource> {
 	return TypeormCommandUtils.loadDataSource(dataSourceFilePath);
 }
 
-export async function loadSeeders(
-	seederPaths: string[],
-): Promise<Constructable<Seeder>[]> {
-	const seederFileExports = await Promise.all(
-		seederPaths.map((seederFile) => import(seederFile)),
-	).then((seederExports) => {
-		return seederExports
-			.map((seederExport) => seederExport.default)
-			.filter((seederExport) => Boolean(seederExport));
-	});
+export async function loadSeeders(seederPaths: string[]): Promise<Constructable<Seeder>[]> {
+	const seederFileExports = (await Promise.all(seederPaths.map((seederFile) => import(seederFile))))
+		.map((seederExport) => seederExport.default?.default ?? seederExport.default)
+		.filter((seederExport) => Boolean(seederExport));
 
 	if (seederFileExports.length === 0) {
 		throw new Error("No default seeders found");

@@ -31,10 +31,7 @@ describe(useSeeders, () => {
 		await useSeeders([UserSeeder, PetSeeder]);
 
 		const em = dataSource.createEntityManager();
-		const [totalUsers, totalPets] = await Promise.all([
-			em.count(User),
-			em.count(Pet),
-		]);
+		const [totalUsers, totalPets] = await Promise.all([em.count(User), em.count(Pet)]);
 
 		expect(totalUsers).toBe(2);
 		expect(totalPets).toBe(1);

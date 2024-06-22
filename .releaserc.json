@@ -1,8 +1,5 @@
 {
-	"branches": [
-		"main",
-		{ "name": "next", "channel": "next", "prerelease": true }
-	],
+	"branches": ["main", { "name": "next", "channel": "next", "prerelease": true }],
 	"plugins": [
 		[
 			"@semantic-release/commit-analyzer",
@@ -35,9 +32,6 @@
 				"message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
 			}
 		],
-		[
-			"@semantic-release/github",
-			{ "successComment": false, "failComment": false, "failTitle": false }
-		]
+		["@semantic-release/github", { "successComment": false, "failComment": false, "failTitle": false }]
 	]
 }

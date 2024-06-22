@@ -1,7 +1,8 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
 	"formatter": {
-		"ignore": ["**/dist/**"]
+		"ignore": ["**/dist/**"],
+		"lineWidth": 120
 	},
 	"linter": {
 		"enabled": true,

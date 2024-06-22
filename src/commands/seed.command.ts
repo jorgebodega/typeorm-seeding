@@ -66,9 +66,7 @@ async function run(paths: string[]) {
 }
 
 const seedCommand = new Command("seed")
-	.description(
-		"Run the seeders specified by the path. Glob pattern is allowed.",
-	)
+	.description("Run the seeders specified by the path. Glob pattern is allowed.")
 	.requiredOption(
 		"-d, --dataSource <dataSourcePath>",
 		"Path to the file where your DataSource instance is defined.",

@@ -6,22 +6,19 @@ import PetSeeder from "./fixtures/Pet.seeder";
 import UserSeeder from "./fixtures/User.seeder";
 import { dataSource } from "./fixtures/dataSource";
 
-const cli = (...argv: string[]) =>
-	bootstrap(["ts-node", "src/cli.ts", ...argv]);
+const cli = (...argv: string[]) => bootstrap(["ts-node", "src/cli.ts", ...argv]);
 
 describe("Seed command", () => {
 	const userRunFn = jest.spyOn(UserSeeder.prototype, "run");
 
 	test("Should fail without valid data source", async () => {
-		await expect(cli("-d", "./invalidDataSource.ts", "")).rejects.toThrow(
-			DataSourceImportationError,
-		);
+		await expect(cli("-d", "./invalidDataSource.ts", "")).rejects.toThrow(DataSourceImportationError);
 	});
 
 	test("Should fail with invalid seeders", async () => {
-		await expect(
-			cli("-d", "./test/fixtures/dataSource.ts", "./invalidSeeder.ts"),
-		).rejects.toThrow(SeederImportationError);
+		await expect(cli("-d", "./test/fixtures/dataSource.ts", "./invalidSeeder.ts")).rejects.toThrow(
+			SeederImportationError,
+		);
 	});
 
 	test("Should fail with bad seeder", async () => {
@@ -29,13 +26,9 @@ describe("Seed command", () => {
 			throw new Error();
 		});
 
-		await expect(
-			cli(
-				"-d",
-				"./test/fixtures/dataSource.ts",
-				"./test/fixtures/User.seeder.ts",
-			),
-		).rejects.toThrow(SeederExecutionError);
+		await expect(cli("-d", "./test/fixtures/dataSource.ts", "./test/fixtures/User.seeder.ts")).rejects.toThrow(
+			SeederExecutionError,
+		);
 	});
 
 	describe("Should execute seeders", () => {
@@ -61,21 +54,13 @@ describe("Seed command", () => {
 		});
 
 		test("Should seed with only one seeder provided", async () => {
-			await cli(
-				"-d",
-				"./test/fixtures/dataSource.ts",
-				"./test/fixtures/User.seeder.ts",
-			);
+			await cli("-d", "./test/fixtures/dataSource.ts", "./test/fixtures/User.seeder.ts");
 
 			expect(userRunFn).toHaveBeenCalledTimes(1);
 		});
 
 		test("Should seed with multiple seeders provided", async () => {
-			await cli(
-				"-d",
-				"./test/fixtures/dataSource.ts",
-				"./test/fixtures/*.seeder.ts",
-			);
+			await cli("-d", "./test/fixtures/dataSource.ts", "./test/fixtures/*.seeder.ts");
 
 			expect(userRunFn).toHaveBeenCalledTimes(1);
 			expect(petRunFn).toHaveBeenCalledTimes(1);

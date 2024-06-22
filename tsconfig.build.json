@@ -1,17 +1,11 @@
 {
-	"extends": "./tsconfig.json",
-	"exclude": [
-		"dist",
-		"coverage",
-		"examples",
-		"jest.config.ts",
-		"node_modules",
-		"test"
-	],
 	"compilerOptions": {
 		"declaration": true,
 		"importHelpers": true,
 		"outDir": "dist",
-		"sourceMap": true
-	}
+		"sourceMap": true,
+		"target": "ES2021"
+	},
+	"exclude": ["dist", "coverage", "examples", "jest.config.ts", "node_modules", "test"],
+	"extends": "./tsconfig.json"
 }

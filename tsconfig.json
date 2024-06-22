@@ -1,5 +1,4 @@
 {
-	"exclude": ["dist", "coverage"],
 	"compilerOptions": {
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
@@ -11,8 +10,8 @@
 		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
 		"lib": ["es2023"],
-		"module": "es2022",
-		"moduleResolution": "Node",
+		"module": "node16",
+		"moduleResolution": "node16",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
@@ -23,5 +22,6 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "es2022"
-	}
+	},
+	"exclude": ["dist", "coverage"]
 }

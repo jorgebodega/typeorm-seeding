@@ -3,9 +3,7 @@
 	"bin": {
 		"typeorm-seeding": "dist/cli.js"
 	},
-	"contributors": [
-		"Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
-	],
+	"contributors": ["Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"],
 	"dependencies": {
 		"chalk": "4.1.2",
 		"commander": "12.1.0",
