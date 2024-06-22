@@ -1,78 +1,65 @@
 {
-  "author": "Gery Hirschfeld <gery.hirschfeld@w3tec.ch> (https://github.com/hirsch88)",
-  "bin": {
-    "typeorm-seeding": "dist/cli.js"
-  },
-  "contributors": [
-    "Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
-  ],
-  "dependencies": {
-    "chalk": "4.1.2",
-    "commander": "12.1.0",
-    "glob": "10.4.2",
-    "ora": "5.4.1",
-    "tslib": "2.6.3"
-  },
-  "description": "🌱 A delightful way to seed test data into your database.",
-  "devDependencies": {
-    "@faker-js/faker": "8.4.1",
-    "@jorgebodega/typeorm-factory": "1.4.0",
-    "@tsconfig/node20": "20.1.4",
-    "@tsconfig/strictest": "2.0.5",
-    "@types/glob": "8.1.0",
-    "@types/jest": "29.5.12",
-    "@types/node": "20.14.7",
-    "@typescript-eslint/eslint-plugin": "7.13.1",
-    "@typescript-eslint/parser": "7.13.1",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-import-resolver-typescript": "3.6.1",
-    "eslint-plugin-import": "2.29.1",
-    "jest": "29.7.0",
-    "prettier": "3.3.2",
-    "rimraf": "5.0.7",
-    "sqlite3": "5.1.7",
-    "ts-jest": "29.1.5",
-    "ts-node": "10.9.2",
-    "typeorm": "0.3.20",
-    "typescript": "5.5.2"
-  },
-  "engines": {
-    "node": ">=18 <19 || >=20"
-  },
-  "keywords": [
-    "typeorm",
-    "seed",
-    "seeding",
-    "orm"
-  ],
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "@jorgebodega/typeorm-seeding",
-  "packageManager": "pnpm@9.4.0",
-  "peerDependencies": {
-    "typeorm": "^0.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jorgebodega/typeorm-seeding.git"
-  },
-  "scripts": {
-    "build": "tsc --project ./tsconfig.build.json",
-    "checks": "pnpm format:ci && pnpm lint:ci && pnpm typecheck",
-    "format": "prettier --write \"{src,test}/**/*.ts\"",
-    "format:ci": "prettier --check \"{src,test}/**/*.ts\"",
-    "lint": "eslint \"{src,test}/**/*.ts\"",
-    "lint:fix": "pnpm lint --fix",
-    "lint:ci": "pnpm lint",
-    "prebuild": "rimraf dist",
-    "seed:run": "ts-node ./src/cli.ts seed",
-    "test": "jest",
-    "test:ci": "jest --silent",
-    "test:cov": "jest --coverage --silent",
-    "test:watch": "jest --watch",
-    "typecheck": "tsc --noEmit"
-  },
-  "types": "dist/index.d.ts",
-  "version": "7.0.0-next.3"
+	"author": "Gery Hirschfeld <gery.hirschfeld@w3tec.ch> (https://github.com/hirsch88)",
+	"bin": {
+		"typeorm-seeding": "dist/cli.js"
+	},
+	"contributors": [
+		"Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
+	],
+	"dependencies": {
+		"chalk": "4.1.2",
+		"commander": "12.1.0",
+		"glob": "10.4.2",
+		"ora": "5.4.1",
+		"tslib": "2.6.3"
+	},
+	"description": "🌱 A delightful way to seed test data into your database.",
+	"devDependencies": {
+		"@biomejs/biome": "1.8.2",
+		"@faker-js/faker": "8.4.1",
+		"@jorgebodega/typeorm-factory": "1.4.0",
+		"@types/glob": "8.1.0",
+		"@types/jest": "29.5.12",
+		"@types/node": "20.14.7",
+		"jest": "29.7.0",
+		"rimraf": "5.0.7",
+		"sqlite3": "5.1.7",
+		"ts-jest": "29.1.5",
+		"ts-node": "10.9.2",
+		"typeorm": "0.3.20",
+		"typescript": "5.5.2"
+	},
+	"engines": {
+		"node": ">=18 <19 || >=20"
+	},
+	"keywords": ["typeorm", "seed", "seeding", "orm"],
+	"license": "MIT",
+	"main": "dist/index.js",
+	"name": "@jorgebodega/typeorm-seeding",
+	"packageManager": "pnpm@9.4.0",
+	"peerDependencies": {
+		"typeorm": "^0.3.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jorgebodega/typeorm-seeding.git"
+	},
+	"scripts": {
+		"build": "tsc --project ./tsconfig.build.json",
+		"checks": "pnpm format:ci && pnpm lint:ci && pnpm typecheck",
+		"format": "biome format --write",
+		"format:ci": "biome format",
+		"lint": "biome lint",
+		"lint:fix": "biome lint --fix",
+		"lint:ci": "biome lint",
+		"prebuild": "rimraf dist",
+		"seed:run": "ts-node ./src/cli.ts seed",
+		"test": "jest",
+		"test:ci": "jest --silent",
+		"test:cov": "jest --coverage --silent",
+		"test:watch": "jest --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"types": "dist/index.d.ts",
+	"version": "7.0.0-next.3"
 }

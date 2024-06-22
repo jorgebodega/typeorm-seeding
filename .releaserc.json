@@ -1,37 +1,43 @@
 {
-  "branches": ["main", { "name": "next", "channel": "next", "prerelease": true }],
-  "plugins": [
-    [
-      "@semantic-release/commit-analyzer",
-      {
-        "releaseRules": [{ "type": "chore", "release": "patch" }],
-        "parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-        }
-      }
-    ],
-    [
-      "@semantic-release/release-notes-generator",
-      {
-        "parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-        }
-      }
-    ],
-    [
-      "@semantic-release/changelog",
-      {
-        "changelogFile": "CHANGELOG.md"
-      }
-    ],
-    "@semantic-release/npm",
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["package.json", "pnpm-lock.yaml", "CHANGELOG.md"],
-        "message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
-      }
-    ],
-    ["@semantic-release/github", { "successComment": false, "failComment": false, "failTitle": false }]
-  ]
+	"branches": [
+		"main",
+		{ "name": "next", "channel": "next", "prerelease": true }
+	],
+	"plugins": [
+		[
+			"@semantic-release/commit-analyzer",
+			{
+				"releaseRules": [{ "type": "chore", "release": "patch" }],
+				"parserOpts": {
+					"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+				}
+			}
+		],
+		[
+			"@semantic-release/release-notes-generator",
+			{
+				"parserOpts": {
+					"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+				}
+			}
+		],
+		[
+			"@semantic-release/changelog",
+			{
+				"changelogFile": "CHANGELOG.md"
+			}
+		],
+		"@semantic-release/npm",
+		[
+			"@semantic-release/git",
+			{
+				"assets": ["package.json", "pnpm-lock.yaml", "CHANGELOG.md"],
+				"message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
+			}
+		],
+		[
+			"@semantic-release/github",
+			{ "successComment": false, "failComment": false, "failTitle": false }
+		]
+	]
 }

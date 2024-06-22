@@ -1,0 +1,19 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"formatter": {
+		"ignore": ["**/dist/**"]
+	},
+	"linter": {
+		"enabled": true,
+		"ignore": ["**/dist/**"],
+		"rules": {
+			"complexity": {
+				"useLiteralKeys": "off"
+			},
+			"recommended": true
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	}
+}

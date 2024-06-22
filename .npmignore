@@ -4,11 +4,10 @@
 /src
 /test
 .editorconfig
-.eslintrc.js
 .node-version
-.prettierrc
 .releaserc.json
 .sgcrc
+biome.json
 jest.config.ts
 logo.png
 test.db

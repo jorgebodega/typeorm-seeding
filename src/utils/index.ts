@@ -1,2 +1,2 @@
-export * from './commandUtils'
-export * from './fileHandling'
+export * from "./commandUtils";
+export * from "./fileHandling";
