@@ -1,21 +1,21 @@
 {
-  "extends": [
-    "config:base",
-    "group:allNonMajor",
-    "schedule:monthly",
-    ":assignAndReview(jorgebodega)",
-    ":automergeDisabled",
-    ":semanticCommits",
-    ":semanticCommitScopeDisabled",
-    ":separatePatchReleases",
-    ":timezone(UTC+1)"
-  ],
-  "baseBranches": ["next"],
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["typeorm"],
-      "groupName": "typeorm",
-      "automerge": false
-    }
-  ]
+	"extends": [
+		"config:base",
+		"group:allNonMajor",
+		"schedule:monthly",
+		":assignAndReview(jorgebodega)",
+		":automergeDisabled",
+		":semanticCommits",
+		":semanticCommitScopeDisabled",
+		":separatePatchReleases",
+		":timezone(UTC+1)"
+	],
+	"baseBranches": ["next"],
+	"packageRules": [
+		{
+			"matchPackagePatterns": ["typeorm"],
+			"groupName": "typeorm",
+			"automerge": false
+		}
+	]
 }

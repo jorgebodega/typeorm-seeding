@@ -25,7 +25,7 @@ importers:
         version: 2.6.3
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.8.2
+        specifier: 1.8.2
         version: 1.8.2
       '@faker-js/faker':
         specifier: 8.4.1
@@ -63,9 +63,6 @@ importers:
       jest:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.14.7)(ts-node@10.9.2(@types/node@20.14.7)(typescript@5.5.2))
-      prettier:
-        specifier: 3.3.2
-        version: 3.3.2
       rimraf:
         specifier: 5.0.7
         version: 5.0.7
@@ -2073,11 +2070,6 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-
-  prettier@3.3.2:
-    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   pretty-format@29.7.0:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
@@ -5146,8 +5138,6 @@ snapshots:
       tunnel-agent: 0.6.0
 
   prelude-ls@1.2.1: {}
-
-  prettier@3.3.2: {}
 
   pretty-format@29.7.0:
     dependencies:

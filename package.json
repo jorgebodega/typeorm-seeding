@@ -28,7 +28,6 @@
 		"eslint-import-resolver-typescript": "3.6.1",
 		"eslint-plugin-import": "2.29.1",
 		"jest": "29.7.0",
-		"prettier": "3.3.2",
 		"rimraf": "5.0.7",
 		"sqlite3": "5.1.7",
 		"ts-jest": "29.1.5",
@@ -54,8 +53,8 @@
 	"scripts": {
 		"build": "tsc --project ./tsconfig.build.json",
 		"checks": "pnpm format:ci && pnpm lint:ci && pnpm typecheck",
-		"format": "prettier --write \"{src,test}/**/*.ts\"",
-		"format:ci": "prettier --check \"{src,test}/**/*.ts\"",
+		"format": "biome format --write",
+		"format:ci": "biome format",
 		"lint": "eslint \"{src,test}/**/*.ts\"",
 		"lint:fix": "pnpm lint --fix",
 		"lint:ci": "pnpm lint",

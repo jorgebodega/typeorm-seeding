@@ -1,7 +1,7 @@
-import { DataSource } from 'typeorm'
+import { DataSource } from "typeorm";
 
 export const dataSource = new DataSource({
-  type: 'sqlite',
-  database: ':memory:',
-  entities: ['test/fixtures/**/*.entity.ts'],
-})
+	type: "sqlite",
+	database: ":memory:",
+	entities: ["test/fixtures/**/*.entity.ts"],
+});

@@ -1,5 +1,5 @@
-import { DataSourceManager } from './DataSourceManager'
+import { DataSourceManager } from "./DataSourceManager";
 
 export function fetchDataSource() {
-  return DataSourceManager.getInstance().dataSource
+	return DataSourceManager.getInstance().dataSource;
 }

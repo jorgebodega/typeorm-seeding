@@ -1,4 +1,4 @@
 export type SeedCommandArguments = {
-  dataSource: string
-}
-export type Constructable<T> = new () => T
+	dataSource: string;
+};
+export type Constructable<T> = new () => T;

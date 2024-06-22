@@ -1,17 +1,17 @@
 {
-  "extends": "./tsconfig.json",
-  "exclude": [
-    "dist",
-    "coverage",
-    "examples",
-    "jest.config.ts",
-    "node_modules",
-    "test"
-  ],
-  "compilerOptions": {
-    "declaration": true,
-    "importHelpers": true,
-    "outDir": "dist",
-    "sourceMap": true,
-  }
+	"extends": "./tsconfig.json",
+	"exclude": [
+		"dist",
+		"coverage",
+		"examples",
+		"jest.config.ts",
+		"node_modules",
+		"test"
+	],
+	"compilerOptions": {
+		"declaration": true,
+		"importHelpers": true,
+		"outDir": "dist",
+		"sourceMap": true
+	}
 }

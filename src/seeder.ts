@@ -1,5 +1,5 @@
-import type { DataSource } from 'typeorm'
+import type { DataSource } from "typeorm";
 
 export abstract class Seeder {
-  abstract run(dataSource: DataSource): Promise<void>
+	abstract run(dataSource: DataSource): Promise<void>;
 }

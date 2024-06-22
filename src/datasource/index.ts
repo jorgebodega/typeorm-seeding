@@ -1,2 +1,2 @@
-export * from './configureDataSource'
-export * from './fetchDataSource'
+export * from "./configureDataSource";
+export * from "./fetchDataSource";
