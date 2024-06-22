@@ -6,6 +6,9 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
+			"complexity": {
+				"useLiteralKeys": "off"
+			},
 			"recommended": true
 		}
 	}

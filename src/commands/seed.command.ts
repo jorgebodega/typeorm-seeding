@@ -8,7 +8,7 @@ import { SeederExecutionError } from "../errors/SeederExecutionError";
 import { useDataSource, useSeeders } from "../helpers";
 import type { Seeder } from "../seeder";
 import type { Constructable, SeedCommandArguments } from "../types";
-import { calculateFilePath, CommandUtils } from "../utils";
+import { calculateFilePath, loadDataSource, loadSeeders } from "../utils";
 
 async function run(paths: string[]) {
 	const opts = seedCommand.opts<SeedCommandArguments>();
@@ -19,10 +19,10 @@ async function run(paths: string[]) {
 	try {
 		const dataSourcePath = resolve(process.cwd(), opts.dataSource);
 
-		dataSource = await CommandUtils.loadDataSource(dataSourcePath);
+		dataSource = await loadDataSource(dataSourcePath);
 
 		spinner.succeed("Datasource loaded");
-	} catch (error: any) {
+	} catch (error: unknown) {
 		spinner.fail("Could not load the data source!");
 		throw new DataSourceImportationError("Could not load the data source!", {
 			cause: error,
@@ -34,17 +34,17 @@ async function run(paths: string[]) {
 	try {
 		const seederFiles = paths.flatMap(calculateFilePath);
 
-		seeders = await CommandUtils.loadSeeders(seederFiles);
+		seeders = await loadSeeders(seederFiles);
 
 		spinner.succeed("Seeder imported");
-	} catch (error: any) {
+	} catch (error: unknown) {
 		spinner.fail("Could not load seeders!");
 		throw new SeederImportationError("Could not load default seeders!", {
 			cause: error,
 		});
 	}
 
-	spinner.info(`Executing seeders...`);
+	spinner.info("Executing seeders...");
 	try {
 		await useDataSource(dataSource, true);
 
@@ -53,7 +53,7 @@ async function run(paths: string[]) {
 			await useSeeders(seeder);
 			spinner.succeed(`Seeder ${seeder.name} executed`);
 		}
-	} catch (error: any) {
+	} catch (error: unknown) {
 		spinner.fail("Could not execute seeder!");
 		await dataSource.destroy();
 		throw new SeederExecutionError("Could not execute seeder!", {

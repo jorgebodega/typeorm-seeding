@@ -18,7 +18,7 @@ describe(useSeeders, () => {
 		await dataSource.destroy();
 	});
 
-	test(`Should seed with only one seeder provided`, async () => {
+	test("Should seed with only one seeder provided", async () => {
 		await useSeeders(UserSeeder);
 
 		const em = dataSource.createEntityManager();
@@ -27,7 +27,7 @@ describe(useSeeders, () => {
 		expect(totalUsers).toBe(1);
 	});
 
-	test(`Should seed with multiple seeders provided`, async () => {
+	test("Should seed with multiple seeders provided", async () => {
 		await useSeeders([UserSeeder, PetSeeder]);
 
 		const em = dataSource.createEntityManager();

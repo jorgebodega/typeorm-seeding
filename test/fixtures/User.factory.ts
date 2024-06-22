@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { FactorizedAttrs, Factory } from "@jorgebodega/typeorm-factory";
+import { type FactorizedAttrs, Factory } from "@jorgebodega/typeorm-factory";
 import { User } from "../fixtures/User.entity";
 import { dataSource } from "./dataSource";
 

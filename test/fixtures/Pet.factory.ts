@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import {
-	FactorizedAttrs,
+	type FactorizedAttrs,
 	Factory,
 	LazyInstanceAttribute,
 	SingleSubfactory,
