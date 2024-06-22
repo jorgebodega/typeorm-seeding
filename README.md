@@ -13,8 +13,6 @@
   </a>
 </p>
 
-
-
 <p align="center">
   <b>A delightful way to seed test data into your database.</b></br>
   <span>Inspired by the awesome framework <a href="https://laravel.com/">laravel</a> in PHP, <a href="https://mikro-orm.io/docs/next/seeding/">MikroORM seeding</a>  and the repositories from <a href="https://github.com/pleerock">pleerock</a></span></br>
@@ -45,7 +43,6 @@ npm i [-D] @jorgebodega/typeorm-seeding
 yarn add [-D] @jorgebodega/typeorm-seeding
 pnpm add [-D] @jorgebodega/typeorm-seeding
 ```
-
 
 # Introduction
 
