@@ -3,7 +3,9 @@
 	"bin": {
 		"typeorm-seeding": "dist/cli.js"
 	},
-	"contributors": ["Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"],
+	"contributors": [
+		"Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
+	],
 	"dependencies": {
 		"chalk": "4.1.2",
 		"commander": "12.1.0",
@@ -28,7 +30,12 @@
 	"engines": {
 		"node": ">=18 <19 || >=20"
 	},
-	"keywords": ["typeorm", "seed", "seeding", "orm"],
+	"keywords": [
+		"typeorm",
+		"seed",
+		"seeding",
+		"orm"
+	],
 	"license": "MIT",
 	"main": "dist/index.js",
 	"name": "@jorgebodega/typeorm-seeding",
@@ -57,5 +64,5 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"types": "dist/index.d.ts",
-	"version": "7.1.0-next.2"
+	"version": "7.1.0-next.3"
 }

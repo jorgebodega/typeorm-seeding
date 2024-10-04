@@ -1,3 +1,10 @@
+# [7.1.0-next.3](https://github.com/jorgebodega/typeorm-seeding/compare/v7.1.0-next.2...v7.1.0-next.3) (2024-10-04)
+
+
+### Bug Fixes
+
+* load seeders classes using typeorm ([#324](https://github.com/jorgebodega/typeorm-seeding/issues/324)) ([#339](https://github.com/jorgebodega/typeorm-seeding/issues/339)) ([a2590cc](https://github.com/jorgebodega/typeorm-seeding/commit/a2590cc7a4d35a2f0899cd62274e2e0a5d07f6fd))
+
 # [7.1.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v7.1.0-next.1...v7.1.0-next.2) (2024-09-25)
 
 
