@@ -28,8 +28,8 @@ importers:
         specifier: 9.0.3
         version: 9.0.3
       '@jorgebodega/typeorm-factory':
-        specifier: 1.4.0
-        version: 1.4.0(typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2)))
+        specifier: 2.1.0
+        version: 2.1.0(typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2)))
       '@types/jest':
         specifier: 29.5.13
         version: 29.5.13
@@ -373,9 +373,9 @@ packages:
     resolution: {integrity: sha512-u3UPsIilWKOM3F9CXtrG8LEJmNxwoCQC/XVj4IKYXvvpx7QIi/Kg1LI5uDmDpKlac62NUtX7eLjRh+jVZcLOzw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  '@jorgebodega/typeorm-factory@1.4.0':
-    resolution: {integrity: sha512-c02QHz1FcR8w4Tzv2Ibf2SvxF4LYlna0DktNT9kfMFkMajcbP94KBN4EBpP4ECU/0baY1pflzhFhphlGErUamA==}
-    engines: {node: '>=14'}
+  '@jorgebodega/typeorm-factory@2.1.0':
+    resolution: {integrity: sha512-EI+EDyzF66kZEGSQtTcgEvmdSB2VeCpFUHVMufOjbz0ehIuJnMSsKqQGUjAs8i/LjbqRDvWeR3zKjFb4emO31Q==}
+    engines: {node: '>=18 <19 || >=20'}
     peerDependencies:
       typeorm: ^0.3.0
 
@@ -1841,9 +1841,6 @@ packages:
       '@swc/wasm':
         optional: true
 
-  tslib@2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
-
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
 
@@ -2443,9 +2440,9 @@ snapshots:
       '@types/yargs': 17.0.11
       chalk: 4.1.2
 
-  '@jorgebodega/typeorm-factory@1.4.0(typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2)))':
+  '@jorgebodega/typeorm-factory@2.1.0(typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2)))':
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.7.0
       typeorm: 0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))
 
   '@jridgewell/gen-mapping@0.1.1':
@@ -4157,8 +4154,6 @@ snapshots:
       typescript: 5.6.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
-
-  tslib@2.4.1: {}
 
   tslib@2.7.0: {}
 
