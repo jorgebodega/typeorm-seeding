@@ -14,9 +14,6 @@ importers:
       commander:
         specifier: 12.1.0
         version: 12.1.0
-      glob:
-        specifier: 11.0.0
-        version: 11.0.0
       ora:
         specifier: 5.4.1
         version: 5.4.1
@@ -33,9 +30,6 @@ importers:
       '@jorgebodega/typeorm-factory':
         specifier: 1.4.0
         version: 1.4.0(typeorm@0.3.20(sqlite3@5.1.7)(ts-node@10.9.2(@types/node@20.16.8)(typescript@5.6.2)))
-      '@types/glob':
-        specifier: 8.1.0
-        version: 8.1.0
       '@types/jest':
         specifier: 29.5.13
         version: 29.5.13
@@ -462,9 +456,6 @@ packages:
   '@types/babel__traverse@7.18.0':
     resolution: {integrity: sha512-v4Vwdko+pgymgS+A2UIaJru93zQd85vIGWObM5ekZNdXCKtDYqATlEYnWgfo86Q6I1Lh0oXnksDnMU1cwmlPDw==}
 
-  '@types/glob@8.1.0':
-    resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
-
   '@types/graceful-fs@4.1.5':
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
 
@@ -479,9 +470,6 @@ packages:
 
   '@types/jest@29.5.13':
     resolution: {integrity: sha512-wd+MVEZCHt23V0/L642O5APvspWply/rGY5BcW4SUETo2UzPU3Z26qr8jC2qxpimI2jjx9h7+2cj2FwIr01bXg==}
-
-  '@types/minimatch@5.1.2':
-    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
   '@types/node@20.16.8':
     resolution: {integrity: sha512-sbo5JmfbZNkyDv+2HCccr9Y9ZkKJBMTru7UdAsCojMGjKNjdaOV73bqEW242QrHEZL8R4LbHMrW+FHB5lZ5/bw==}
@@ -2546,11 +2534,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.18.10
 
-  '@types/glob@8.1.0':
-    dependencies:
-      '@types/minimatch': 5.1.2
-      '@types/node': 20.16.8
-
   '@types/graceful-fs@4.1.5':
     dependencies:
       '@types/node': 20.16.8
@@ -2569,8 +2552,6 @@ snapshots:
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
-
-  '@types/minimatch@5.1.2': {}
 
   '@types/node@20.16.8':
     dependencies:

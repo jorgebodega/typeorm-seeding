@@ -8,7 +8,7 @@ import { SeederExecutionError } from "../errors/SeederExecutionError";
 import { useDataSource, useSeeders } from "../helpers";
 import type { Seeder } from "../seeder";
 import type { Constructable, SeedCommandArguments } from "../types";
-import { calculateFilePath, loadDataSource, loadSeeders } from "../utils";
+import { loadDataSource, loadSeeders } from "../utils";
 
 async function run(paths: string[]) {
 	const opts = seedCommand.opts<SeedCommandArguments>();
@@ -32,9 +32,7 @@ async function run(paths: string[]) {
 	spinner.start("Importing seeders");
 	let seeders!: Constructable<Seeder>[];
 	try {
-		const seederFiles = paths.flatMap(calculateFilePath);
-
-		seeders = await loadSeeders(seederFiles);
+		seeders = await loadSeeders(dataSource, paths);
 
 		spinner.succeed("Seeder imported");
 	} catch (error: unknown) {
