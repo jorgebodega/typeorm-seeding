@@ -1,3 +1,16 @@
+# [7.1.0](https://github.com/jorgebodega/typeorm-seeding/compare/v7.0.0...v7.1.0) (2024-10-04)
+
+
+### Bug Fixes
+
+* load seeders classes using typeorm ([#324](https://github.com/jorgebodega/typeorm-seeding/issues/324)) ([#339](https://github.com/jorgebodega/typeorm-seeding/issues/339)) ([a2590cc](https://github.com/jorgebodega/typeorm-seeding/commit/a2590cc7a4d35a2f0899cd62274e2e0a5d07f6fd))
+* update dependency glob to v11 ([#342](https://github.com/jorgebodega/typeorm-seeding/issues/342)) ([e5fb787](https://github.com/jorgebodega/typeorm-seeding/commit/e5fb7870960fd8bec9e3bc8afd158753a320d191))
+
+
+### Features
+
+* install biome as formatter and linter ([#335](https://github.com/jorgebodega/typeorm-seeding/issues/335)) ([a195c27](https://github.com/jorgebodega/typeorm-seeding/commit/a195c271ed2dd2c44eb84a11e061732c0b5cc83e))
+
 # [7.1.0-next.3](https://github.com/jorgebodega/typeorm-seeding/compare/v7.1.0-next.2...v7.1.0-next.3) (2024-10-04)
 
 
