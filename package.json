@@ -8,22 +8,24 @@
 		"chalk": "4.1.2",
 		"commander": "12.1.0",
 		"ora": "5.4.1",
-		"tslib": "2.7.0"
+		"tslib": "2.8.1"
 	},
 	"description": "🌱 A delightful way to seed test data into your database.",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
-		"@faker-js/faker": "9.0.3",
+		"@faker-js/faker": "9.9.0",
 		"@jorgebodega/typeorm-factory": "2.1.0",
-		"@types/jest": "29.5.13",
-		"@types/node": "20.16.10",
+		"@tsconfig/node24": "24.0.4",
+		"@tsconfig/strictest": "2.0.8",
+		"@types/jest": "30.0.0",
+		"@types/node": "25.0.9",
 		"better-sqlite3": "12.6.2",
-		"jest": "29.7.0",
-		"rimraf": "6.0.1",
-		"ts-jest": "29.2.5",
+		"jest": "30.2.0",
+		"rimraf": "6.1.2",
+		"ts-jest": "29.4.6",
 		"ts-node": "10.9.2",
-		"typeorm": "0.3.20",
-		"typescript": "5.6.2"
+		"typeorm": "0.3.28",
+		"typescript": "5.9.3"
 	},
 	"engines": {
 		"node": "^20.19.0 || ^22.12.0 || >=24.11.0"
