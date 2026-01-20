@@ -1,20 +1,6 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
-	"formatter": {
-		"ignore": ["**/dist/**"],
-		"lineWidth": 120
-	},
-	"linter": {
-		"enabled": true,
-		"ignore": ["**/dist/**"],
-		"rules": {
-			"complexity": {
-				"useLiteralKeys": "off"
-			},
-			"recommended": true
-		}
-	},
-	"organizeImports": {
-		"enabled": true
-	}
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"formatter": { "lineWidth": 120 },
+	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true }
 }

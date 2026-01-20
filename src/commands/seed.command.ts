@@ -12,6 +12,7 @@ import { loadDataSource, loadSeeders } from "../utils";
 
 async function run(paths: string[]) {
 	const opts = seedCommand.opts<SeedCommandArguments>();
+	// biome-ignore lint/complexity/useLiteralKeys: Conflict with TS
 	const spinner = ora({ isSilent: process.env["NODE_ENV"] === "test" }).start();
 
 	spinner.start("Loading datasource");
