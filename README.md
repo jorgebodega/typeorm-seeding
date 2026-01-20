@@ -47,6 +47,11 @@ yarn add [-D] @jorgebodega/typeorm-seeding
 pnpm add [-D] @jorgebodega/typeorm-seeding
 ```
 
+# Node.js support (aligned with TypeORM)
+
+This package follows TypeORM’s supported Node.js versions.
+Current range: `^20.19.0 || ^22.12.0 || >=24.11.0` (per TypeORM).
+
 # Introduction
 
 Isn't it exhausting to create some sample data for your database, well this time is over!
