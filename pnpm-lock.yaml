@@ -25,8 +25,8 @@ importers:
         specifier: 2.3.11
         version: 2.3.11
       '@faker-js/faker':
-        specifier: 9.9.0
-        version: 9.9.0
+        specifier: 10.2.0
+        version: 10.2.0
       '@jorgebodega/typeorm-factory':
         specifier: 2.1.0
         version: 2.1.0(typeorm@0.3.28(better-sqlite3@12.6.2)(ts-node@10.9.2(@types/node@25.0.9)(typescript@5.9.3)))
@@ -297,9 +297,9 @@ packages:
   '@emnapi/wasi-threads@1.1.0':
     resolution: {integrity: sha512-WI0DdZ8xFSbgMjR1sFsKABJ/C5OnRrjT06JXbZKexJGrDuPTzZdDYfFlsgcCXCyf+suG5QU2e/y1Wo2V/OapLQ==}
 
-  '@faker-js/faker@9.9.0':
-    resolution: {integrity: sha512-OEl393iCOoo/z8bMezRlJu+GlRGlsKbUAN7jKB6LhnKoqKve5DXRpalbItIIcwnCjs1k/FOPjFzcA6Qn+H+YbA==}
-    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+  '@faker-js/faker@10.2.0':
+    resolution: {integrity: sha512-rTXwAsIxpCqzUnZvrxVh3L0QA0NzToqWBLAhV+zDV3MIIwiQhAZHMdPCIaj5n/yADu/tyk12wIPgL6YHGXJP+g==}
+    engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
   '@isaacs/balanced-match@4.0.1':
     resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
@@ -2137,7 +2137,7 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@faker-js/faker@9.9.0': {}
+  '@faker-js/faker@10.2.0': {}
 
   '@isaacs/balanced-match@4.0.1': {}
 
