@@ -12,7 +12,7 @@
 	},
 	"description": "🌱 A delightful way to seed test data into your database.",
 	"devDependencies": {
-		"@biomejs/biome": "1.9.3",
+		"@biomejs/biome": "1.9.4",
 		"@faker-js/faker": "9.9.0",
 		"@jorgebodega/typeorm-factory": "2.1.0",
 		"@tsconfig/node24": "24.0.4",
