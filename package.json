@@ -9,7 +9,7 @@
 	"dependencies": {
 		"chalk": "4.1.2",
 		"commander": "14.0.2",
-		"ora": "5.4.1",
+		"ora": "9.0.0",
 		"tslib": "2.8.1"
 	},
 	"description": "🌱 A delightful way to seed test data into your database.",
