@@ -3,9 +3,29 @@ coverage
 dist
 test.db
 
+### logs ###
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### env ###
+.env
+.env.*.local
+!.env.example
+
+### typescript ###
+*.tsbuildinfo
+
+### os ###
+.DS_Store
+
 ### node ###
 node_modules
 
 # IDE
 .vscode/*
+!.vscode/extensions.json
 !.vscode/launch.json
+!.vscode/settings.json

@@ -1,21 +1,22 @@
 {
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		"config:base",
+		"config:recommended",
 		"group:allNonMajor",
 		"schedule:monthly",
 		":assignAndReview(jorgebodega)",
 		":automergeDisabled",
+		":maintainLockFilesMonthly",
 		":semanticCommits",
 		":semanticCommitScopeDisabled",
 		":separatePatchReleases",
-		":timezone(UTC+1)"
+		":timezone(Europe/Madrid)"
 	],
-	"baseBranches": ["next"],
+	"baseBranchPatterns": ["next"],
 	"packageRules": [
 		{
-			"matchPackagePatterns": ["typeorm"],
 			"groupName": "typeorm",
-			"automerge": false
+			"matchPackageNames": ["typeorm"]
 		}
 	]
 }

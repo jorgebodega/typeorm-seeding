@@ -3,27 +3,10 @@
 	"plugins": [
 		[
 			"@semantic-release/commit-analyzer",
-			{
-				"releaseRules": [{ "type": "chore", "release": "patch" }],
-				"parserOpts": {
-					"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-				}
-			}
+			{ "preset": "conventionalcommits", "releaseRules": [{ "type": "chore", "release": "patch" }] }
 		],
-		[
-			"@semantic-release/release-notes-generator",
-			{
-				"parserOpts": {
-					"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-				}
-			}
-		],
-		[
-			"@semantic-release/changelog",
-			{
-				"changelogFile": "CHANGELOG.md"
-			}
-		],
+		["@semantic-release/release-notes-generator", { "preset": "conventionalcommits" }],
+		"@semantic-release/changelog",
 		"@semantic-release/npm",
 		[
 			"@semantic-release/git",
@@ -32,6 +15,6 @@
 				"message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
 			}
 		],
-		["@semantic-release/github", { "successComment": false, "failComment": false, "failTitle": false }]
+		["@semantic-release/github", { "successComment": false, "failComment": false }]
 	]
 }
