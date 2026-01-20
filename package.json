@@ -7,7 +7,7 @@
 		"Jorge Bodega <jorge.bodega.f@gmail.com> (https://github.com/jorgebodega)"
 	],
 	"dependencies": {
-		"chalk": "4.1.2",
+		"chalk": "5.6.2",
 		"commander": "14.0.2",
 		"ora": "5.4.1",
 		"tslib": "2.8.1"
