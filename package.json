@@ -14,7 +14,7 @@
 	},
 	"description": "🌱 A delightful way to seed test data into your database.",
 	"devDependencies": {
-		"@biomejs/biome": "2.4.6",
+		"@biomejs/biome": "2.4.13",
 		"@faker-js/faker": "9.9.0",
 		"@jorgebodega/typeorm-factory": "2.1.0",
 		"@tsconfig/node24": "24.0.4",
@@ -24,7 +24,7 @@
 		"better-sqlite3": "12.9.0",
 		"jest": "30.3.0",
 		"rimraf": "6.1.3",
-		"ts-jest": "29.4.6",
+		"ts-jest": "29.4.9",
 		"ts-node": "10.9.2",
 		"typeorm": "0.3.28",
 		"typescript": "5.9.3"
