@@ -35,5 +35,5 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
-            conventional-changelog-conventionalcommits
+            conventional-changelog-conventionalcommits@9
           semantic_version: 25
