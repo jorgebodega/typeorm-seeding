@@ -17,7 +17,7 @@ export async function useDataSource(
 ): Promise<void> {
 	const overrideOptions =
 		typeof overrideOptionsOrForceInitialization === "object" ? overrideOptionsOrForceInitialization : undefined;
-	const shouldInitilialize =
+	const shouldInitialize =
 		typeof overrideOptionsOrForceInitialization === "boolean"
 			? overrideOptionsOrForceInitialization
 			: forceInitialization;
@@ -26,7 +26,7 @@ export async function useDataSource(
 		dataSource.setOptions(overrideOptions);
 	}
 
-	if (shouldInitilialize && !dataSource.isInitialized) {
+	if (shouldInitialize && !dataSource.isInitialized) {
 		await dataSource.initialize();
 	}
 

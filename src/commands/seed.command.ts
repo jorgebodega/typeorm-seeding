@@ -2,9 +2,7 @@ import { resolve } from "node:path";
 import { Command } from "commander";
 import ora from "ora";
 import type { DataSource } from "typeorm";
-import { SeederImportationError } from "../errors";
-import { DataSourceImportationError } from "../errors/DataSourceImportationError";
-import { SeederExecutionError } from "../errors/SeederExecutionError";
+import { DataSourceImportationError, SeederExecutionError, SeederImportationError } from "../errors";
 import { useDataSource, useSeeders } from "../helpers";
 import type { Seeder } from "../seeder";
 import type { Constructable, SeedCommandArguments } from "../types";
@@ -38,7 +36,7 @@ async function run(paths: string[]) {
 		spinner.succeed("Seeder imported");
 	} catch (error: unknown) {
 		spinner.fail("Could not load seeders!");
-		throw new SeederImportationError("Could not load default seeders!", {
+		throw new SeederImportationError("Could not load seeders!", {
 			cause: error,
 		});
 	}
@@ -54,7 +52,7 @@ async function run(paths: string[]) {
 		}
 	} catch (error: unknown) {
 		spinner.fail("Could not execute seeder!");
-		await dataSource.destroy();
+		if (dataSource.isInitialized) await dataSource.destroy();
 		throw new SeederExecutionError("Could not execute seeder!", {
 			cause: error,
 		});
