@@ -1,6 +1,6 @@
 import type { DataSource } from "typeorm";
-import { importClassesFromDirectories } from "typeorm/util/DirectoryExportedClassesLoader";
 import { CommandUtils as TypeormCommandUtils } from "typeorm/commands/CommandUtils";
+import { importClassesFromDirectories } from "typeorm/util/DirectoryExportedClassesLoader";
 import { Seeder } from "../seeder";
 import type { Constructable } from "../types";
 
