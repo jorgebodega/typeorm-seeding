@@ -18,6 +18,14 @@
 		{
 			"groupName": "typeorm",
 			"matchPackageNames": ["typeorm"]
+		},
+		{
+			"allowedVersions": "<13",
+			"matchPackageNames": ["better-sqlite3"]
+		},
+		{
+			"allowedVersions": "<7",
+			"matchPackageNames": ["typescript"]
 		}
 	]
 }

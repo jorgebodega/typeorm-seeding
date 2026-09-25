@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/Checked_with-Biome-60a5fa?style=for-the-badge&logo=biome" alt="Biome" />
   </a>
   <a href='https://coveralls.io/github/jorgebodega/typeorm-seeding'>
-    <img alt="Coveralls master branch" src="https://img.shields.io/coveralls/github/jorgebodega/typeorm-seeding/master?style=for-the-badge">
+    <img alt="Coveralls main branch" src="https://img.shields.io/coveralls/github/jorgebodega/typeorm-seeding/main?style=for-the-badge">
   </a>
 </p>
 

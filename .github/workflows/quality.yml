@@ -1,9 +1,9 @@
 name: Quality checks
 on:
-  push:
-    branches: [ master, next ]
   pull_request:
-    branches: [ master, next ]
+    branches: [ main, next, '*.x' ]
+  push:
+    branches: [ main, next, '*.x' ]
 jobs:
   format:
     runs-on: ubuntu-latest
