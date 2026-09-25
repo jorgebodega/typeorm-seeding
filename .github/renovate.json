@@ -1,5 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"baseBranchPatterns": ["next"],
 	"extends": [
 		"config:recommended",
 		"group:allNonMajor",
@@ -12,7 +13,7 @@
 		":separatePatchReleases",
 		":timezone(Europe/Madrid)"
 	],
-	"baseBranchPatterns": ["next"],
+	"minimumReleaseAge": "7 days",
 	"packageRules": [
 		{
 			"groupName": "typeorm",

@@ -1,6 +1,18 @@
-ignoredBuiltDependencies:
-  - unrs-resolver
+allowBuilds:
+  '@biomejs/biome': true
+  '@parcel/watcher': false
+  better-sqlite3: true
+  unrs-resolver: false
 
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - better-sqlite3
+minimumReleaseAge: 10080
+
+minimumReleaseAgeExclude:
+  - '@jorgebodega/*'
+
+saveExact: true
+
+trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  # TODO: remove once semver@6.3.1 (via @babel/core <- jest) is no longer in pnpm-lock.yaml; published manually without provenance after 7.x had it, verified against npm/node-semver
+  - 'semver@6.3.1'
