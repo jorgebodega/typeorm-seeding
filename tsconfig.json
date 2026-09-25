@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"types": ["node", "jest"]
 	},
 	"exclude": ["dist", "coverage"],
 	"extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/node24/tsconfig.json"]
