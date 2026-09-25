@@ -29,5 +29,6 @@
 			"enabled": false,
 			"matchBaseBranches": ["/^[0-9]+\\.x$/"]
 		}
-	]
+	],
+	"vulnerabilityAlerts": { "enabled": true }
 }
