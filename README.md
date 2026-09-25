@@ -168,6 +168,21 @@ typeorm-seeding seed -d <dataSourcePath> <paths...>
 
 Every exported class extending Seeder in the matched files is executed.
 
+```mermaid
+flowchart TD
+    A["typeorm-seeding seed -d dataSourcePath paths..."] --> B["Load the data source file"]
+    B -- fails --> E1["DataSourceImportationError"]
+    B --> C["Import every exported Seeder subclass from the paths"]
+    C -- fails or none found --> E2["SeederImportationError"]
+    C --> D["Initialize the data source"]
+    D -- fails --> E3["SeederExecutionError"]
+    D --> F["Run the seeders one by one"]
+    F -- a seeder fails --> E3
+    F --> G["Destroy the data source"]
+```
+
+Each error keeps the original failure in its `cause`, and the command exits with a non-zero code.
+
 ##### Options
 
 | Option                 | Default           | Description             |
