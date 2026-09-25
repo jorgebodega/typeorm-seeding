@@ -1,3 +1,4 @@
+import { DataSource } from "typeorm";
 import { SeederImportationError } from "../src";
 import { bootstrap } from "../src/commands/seed.command";
 import { DataSourceImportationError } from "../src/errors/DataSourceImportationError";
@@ -21,10 +22,14 @@ describe("Seed command", () => {
 		);
 	});
 
-	test("Should fail with bad seeder", async () => {
-		userRunFn.mockImplementationOnce(async () => {
-			throw new Error();
-		});
+	test.each([
+		["the seeder fails", () => userRunFn.mockRejectedValueOnce(new Error())],
+		[
+			"the data source cannot be initialized",
+			() => jest.spyOn(DataSource.prototype, "initialize").mockRejectedValueOnce(new Error()),
+		],
+	])("Should fail with seeder execution error when %s", async (_, arrange) => {
+		arrange();
 
 		await expect(cli("-d", "./test/fixtures/dataSource.ts", "./test/fixtures/User.seeder.ts")).rejects.toThrow(
 			SeederExecutionError,
