@@ -40,12 +40,19 @@ jobs:
       - run: pnpm typecheck
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [ 20.19.0, 22.12.0, 24.11.0 ]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version-file: '.node-version'
+          node-version: ${{ matrix.node }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test:ci
+      - run: pnpm build
+      - run: node -e "const m = require('./dist'); if (Object.keys(m).length === 0) process.exit(1)"
+      - run: node --input-type=module -e "const m = await import('./dist/index.js'); if (Object.keys(m).filter((k) => k !== 'default').length === 0) process.exit(1)"

@@ -6,5 +6,5 @@
 		"types": ["node", "jest"]
 	},
 	"exclude": ["dist", "coverage"],
-	"extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/node24/tsconfig.json"]
+	"extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/node20/tsconfig.json"]
 }

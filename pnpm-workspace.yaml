@@ -16,3 +16,5 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   # TODO: remove once semver@6.3.1 (via @babel/core <- jest) is no longer in pnpm-lock.yaml; published manually without provenance after 7.x had it, verified against npm/node-semver
   - 'semver@6.3.1'
+  # TODO: remove once @types/node moves past the 20.x line (its undici-types ~6.21.0); published manually by the undici lead maintainer without provenance, verified against nodejs/undici v6.21.0
+  - 'undici-types@6.21.0'

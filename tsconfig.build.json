@@ -3,9 +3,8 @@
 		"declaration": true,
 		"importHelpers": true,
 		"outDir": "dist",
-		"sourceMap": true,
-		"target": "es2022"
+		"sourceMap": true
 	},
-	"exclude": ["dist", "coverage", "jest.config.ts", "node_modules", "test"],
+	"exclude": ["dist", "coverage", "node_modules", "test"],
 	"extends": "./tsconfig.json"
 }
