@@ -6,15 +6,21 @@ on:
         description: 'Check release instead of publishing'
         default: "false"
         required: false
+concurrency:
+  cancel-in-progress: false
+  group: release
 permissions:
-  contents: write
+  contents: read
   id-token: write
 jobs:
   release:
+    environment: release
     name: Generate a new release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
@@ -24,7 +30,7 @@ jobs:
       - run: pnpm build
       - uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
           dry_run: ${{ github.event.inputs.dry-run }}
           extra_plugins: |
