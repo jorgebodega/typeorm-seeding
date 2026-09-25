@@ -29,17 +29,22 @@
 
 # Contents
 
+- [Installation](#installation)
+- [Compatibility](#compatibility)
+- [Introduction](#introduction)
 - [Seeder](#seeder-1)
   - [run](#run)
 - [CLI](#cli-configuration)
   - [seed](#seed)
 - [Testing features](#testing-features)
+- [Factory](#factory)
+- [Development](#development)
 
 # Installation
 
 Before using this TypeORM extension please read the [TypeORM Getting Started](https://typeorm.io/#/) documentation. This explains how to setup a TypeORM project.
 
-After that install the extension with `npm` or `yarn`. Add development flag if you are not using seeders nor factories in production code.
+After that, install the extension. Add development flag if you are not using seeders nor factories in production code.
 
 ```bash
 npm i [-D] @jorgebodega/typeorm-seeding
@@ -47,10 +52,14 @@ yarn add [-D] @jorgebodega/typeorm-seeding
 pnpm add [-D] @jorgebodega/typeorm-seeding
 ```
 
-# Node.js support (aligned with TypeORM)
+# Compatibility
 
-This package follows TypeORM’s supported Node.js versions.
-Current range: `^20.19.0 || ^22.12.0 || >=24.11.0` (per TypeORM).
+| Version | TypeORM   | Node.js                                 | Branch | Status                                                                        |
+| ------- | --------- | --------------------------------------- | ------ | ----------------------------------------------------------------------------- |
+| 8.x     | `^0.3.28` | `^20.19.0 \|\| ^22.12.0 \|\| >=24.11.0` | `main` | Stable. Last major supporting TypeORM 0.3; moves to `8.x` for security fixes. |
+| 9.x     | `^1.0.0`  | `^20.19.0 \|\| ^22.13.0 \|\| >=24.11.0` | `next` | In development, published with the `next` npm tag.                            |
+
+Node.js ranges follow the ones supported by TypeORM.
 
 # Introduction
 
@@ -107,7 +116,7 @@ class UserSeeder extends Seeder {
 }
 ```
 
-This seeder class must be exported as default to be handled by the CLI.
+The seeder class must be exported from its file (default or named export) to be found by the CLI.
 
 ```typescript
 export default class UserSeeder extends Seeder {
@@ -151,40 +160,36 @@ Add the following script to your `package.json` file to configure them.
 
 ## `seed`
 
-This command execute a seeder, that could be specified as a parameter. Glob pattern is supported.
+This command executes the seeders found in the given paths. Glob patterns are supported.
 
 ```bash
-typeorm-seeding -d [...] seed <paths>
+typeorm-seeding seed -d <dataSourcePath> <paths...>
 ```
 
-CLI command only executes default seeders.
+Every exported class extending Seeder in the matched files is executed.
 
 ##### Options
 
-| Option                 | Default                              | Description                                           |
-| ---------------------- | ------------------------------------ | ----------------------------------------------------- |
-| `--dataSource` or `-d` |                                      | Path of the data source                               |
+| Option                 | Default           | Description             |
+| ---------------------- | ----------------- | ----------------------- |
+| `--dataSource` or `-d` | `./datasource.ts` | Path of the data source |
 
 # Testing features
 
 We provide some testing features that we already use to test this package, like connection configuration.
-The entity factories can also be used in testing. To do so call the `useFactories` or `useSeeders` function.
+Use `useDataSource` to register a data source and `useSeeders` to run seeders from your tests.
 
 ## `useSeeders`
 
 Execute one or more seeders.
 
 ```typescript
-useSeeders(entrySeeders: ClassConstructor<Seeder> | ClassConstructor<Seeder>[]): Promise<void>
-useSeeders(
-  entrySeeders: ClassConstructor<Seeder> | ClassConstructor<Seeder>[],
-  customOptions: Partial<ConnectionConfiguration>,
-): Promise<void>
+useSeeders(entrySeeders: Constructable<Seeder> | Constructable<Seeder>[]): Promise<void>
 ```
 
 ## `useDataSource`
 
-Use specific data source on the factories. If the data source is not initialized when provided, can be initialized with the `forceInitialization` flag.
+Register the data source used by `useSeeders`. If the data source is not initialized when provided, can be initialized with the `forceInitialization` flag.
 
 ```typescript
 useDataSource(dataSource: DataSource): Promise<void>
@@ -200,3 +205,21 @@ useDataSource(
 # Factory
 
 Factory related code has been removed from this package, now on [@jorgebodega/typeorm-factory](https://github.com/jorgebodega/typeorm-factory).
+
+# Development
+
+Use the Node.js version in `.node-version` and pnpm (`corepack enable`).
+
+```bash
+pnpm install
+pnpm checks     # format, lint (including import order) and typecheck
+pnpm lint:fix   # apply safe lint fixes and sort imports
+pnpm test       # jest against in-memory sqlite
+pnpm build
+```
+
+- `next`: development branch. Releases prereleases with the `next` npm tag.
+- `main`: stable releases with the `latest` npm tag.
+- `N.x`: maintenance branch of a previous major. Security fixes only, released with the `release-N.x` npm tag.
+
+Commits follow [Conventional Commits](https://www.conventionalcommits.org). Releases are created by the manual **Release** workflow (semantic-release); run it with `dry-run` first.
