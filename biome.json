@@ -2,5 +2,6 @@
 	"$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
 	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"formatter": { "lineWidth": 120 },
+	"linter": { "domains": { "project": "recommended", "test": "recommended", "types": "recommended" } },
 	"vcs": { "clientKind": "git", "enabled": true, "useIgnoreFile": true }
 }

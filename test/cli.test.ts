@@ -2,9 +2,9 @@ import { SeederImportationError } from "../src";
 import { bootstrap } from "../src/commands/seed.command";
 import { DataSourceImportationError } from "../src/errors/DataSourceImportationError";
 import { SeederExecutionError } from "../src/errors/SeederExecutionError";
+import { dataSource } from "./fixtures/dataSource";
 import PetSeeder from "./fixtures/Pet.seeder";
 import UserSeeder from "./fixtures/User.seeder";
-import { dataSource } from "./fixtures/dataSource";
 
 const cli = (...argv: string[]) => bootstrap(["ts-node", "src/cli.ts", ...argv]);
 
