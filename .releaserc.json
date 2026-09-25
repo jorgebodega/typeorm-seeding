@@ -12,7 +12,7 @@
 			"@semantic-release/git",
 			{
 				"assets": ["package.json", "pnpm-lock.yaml", "CHANGELOG.md"],
-				"message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
+				"message": "chore: release ${nextRelease.version} [skip ci]"
 			}
 		],
 		["@semantic-release/github", { "failComment": false, "successComment": false }]
