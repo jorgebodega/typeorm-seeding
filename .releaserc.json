@@ -1,9 +1,9 @@
 {
-	"branches": ["main", { "name": "next", "channel": "next", "prerelease": true }],
+	"branches": ["+([0-9])?(.{+([0-9]),x}).x", "main", { "channel": "next", "name": "next", "prerelease": true }],
 	"plugins": [
 		[
 			"@semantic-release/commit-analyzer",
-			{ "preset": "conventionalcommits", "releaseRules": [{ "type": "chore", "release": "patch" }] }
+			{ "preset": "conventionalcommits", "releaseRules": [{ "release": "patch", "type": "chore" }] }
 		],
 		["@semantic-release/release-notes-generator", { "preset": "conventionalcommits" }],
 		"@semantic-release/changelog",
@@ -15,6 +15,6 @@
 				"message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
 			}
 		],
-		["@semantic-release/github", { "successComment": false, "failComment": false }]
+		["@semantic-release/github", { "failComment": false, "successComment": false }]
 	]
 }
