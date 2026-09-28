@@ -10,7 +10,11 @@ import UserSeeder from "./fixtures/User.seeder";
 const cli = (...argv: string[]) => bootstrap(["ts-node", "src/cli.ts", ...argv]);
 
 describe("Seed command", () => {
-	const userRunFn = jest.spyOn(UserSeeder.prototype, "run");
+	let userRunFn: jest.SpiedFunction<UserSeeder["run"]>;
+
+	beforeEach(() => {
+		userRunFn = jest.spyOn(UserSeeder.prototype, "run");
+	});
 
 	test("Should fail without valid data source", async () => {
 		await expect(cli("-d", "./invalidDataSource.ts", "")).rejects.toThrow(DataSourceImportationError);
@@ -28,6 +32,17 @@ describe("Seed command", () => {
 			"the data source cannot be initialized",
 			() => jest.spyOn(DataSource.prototype, "initialize").mockRejectedValueOnce(new Error()),
 		],
+		[
+			"the data source cannot be destroyed",
+			() => {
+				userRunFn.mockRejectedValueOnce(new Error());
+				const destroy = DataSource.prototype.destroy;
+				jest.spyOn(DataSource.prototype, "destroy").mockImplementationOnce(async function (this: DataSource) {
+					await destroy.call(this);
+					throw new Error();
+				});
+			},
+		],
 	])("Should fail with seeder execution error when %s", async (_, arrange) => {
 		arrange();
 
@@ -37,7 +52,7 @@ describe("Seed command", () => {
 	});
 
 	describe("Should execute seeders", () => {
-		const petRunFn = jest.spyOn(PetSeeder.prototype, "run");
+		let petRunFn: jest.SpiedFunction<PetSeeder["run"]>;
 
 		beforeAll(async () => {
 			await dataSource.initialize();
@@ -46,8 +61,7 @@ describe("Seed command", () => {
 		beforeEach(async () => {
 			await dataSource.synchronize(true);
 
-			userRunFn.mockReset();
-			petRunFn.mockReset();
+			petRunFn = jest.spyOn(PetSeeder.prototype, "run");
 		});
 
 		afterEach(async () => {
@@ -59,7 +73,12 @@ describe("Seed command", () => {
 		});
 
 		test("Should seed with only one seeder provided", async () => {
-			await cli("-d", "./test/fixtures/dataSource.ts", "./test/fixtures/User.seeder.ts");
+			await cli(
+				"-d",
+				"./test/fixtures/dataSource.ts",
+				"./test/fixtures/User.seeder.ts",
+				"./test/fixtures/User.seeder.ts",
+			);
 
 			expect(userRunFn).toHaveBeenCalledTimes(1);
 		});

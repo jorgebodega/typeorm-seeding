@@ -21,19 +21,13 @@ describe(useSeeders, () => {
 	test("Should seed with only one seeder provided", async () => {
 		await useSeeders(UserSeeder);
 
-		const em = dataSource.createEntityManager();
-		const [totalUsers] = await Promise.all([em.count(User)]);
-
-		expect(totalUsers).toBe(1);
+		expect(await dataSource.manager.count(User)).toBe(1);
 	});
 
 	test("Should seed with multiple seeders provided", async () => {
 		await useSeeders([UserSeeder, PetSeeder]);
 
-		const em = dataSource.createEntityManager();
-		const [totalUsers, totalPets] = await Promise.all([em.count(User), em.count(Pet)]);
-
-		expect(totalUsers).toBe(2);
-		expect(totalPets).toBe(1);
+		expect(await dataSource.manager.count(User)).toBe(2);
+		expect(await dataSource.manager.count(Pet)).toBe(1);
 	});
 });
