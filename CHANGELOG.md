@@ -1,3 +1,13 @@
+## [9.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v8.0.0...v9.0.0-next.1) (2026-09-28)
+
+### ⚠ BREAKING CHANGES
+
+* require typeorm 1 (#386)
+
+### Features
+
+* require typeorm 1 ([#386](https://github.com/jorgebodega/typeorm-seeding/issues/386)) ([271d599](https://github.com/jorgebodega/typeorm-seeding/commit/271d599c5cd6c5916c541a9edefe487a8bd5016c))
+
 ## [8.0.0](https://github.com/jorgebodega/typeorm-seeding/compare/v7.1.0...v8.0.0) (2026-09-28)
 
 ### ⚠ BREAKING CHANGES
