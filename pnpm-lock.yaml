@@ -183,8 +183,8 @@ importers:
         specifier: 9.9.0
         version: 9.9.0
       '@jorgebodega/typeorm-factory':
-        specifier: 3.0.0
-        version: 3.0.0(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.9.7)(typescript@5.9.3)))
+        specifier: 4.0.0-next.1
+        version: 4.0.0-next.1(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.9.7)(typescript@5.9.3)))
       '@tsconfig/node24':
         specifier: 24.0.5
         version: 24.0.5
@@ -554,11 +554,11 @@ packages:
     resolution: {integrity: sha512-LvVYn83nnXPl+Rg98nvcFgjx6nRMTArhSn6RAX/w3ELn54S8A42TYZvsCMdGUqTM8S0wyXbtlQdU6Hi6dykj9g==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
-  '@jorgebodega/typeorm-factory@3.0.0':
-    resolution: {integrity: sha512-eIi5ubqu/EBPUJL8K0BAzpqHNfOJA6IKQkThF1Xf+J4NJhRuID5H+bAba6r4MsIz315WaMRIk+U/TEAQV5HMrQ==}
-    engines: {node: ^20.19.0 || ^22.12.0 || >=24.11.0}
+  '@jorgebodega/typeorm-factory@4.0.0-next.1':
+    resolution: {integrity: sha512-Y+LF2sBxVn6F8EyM8xwFlLwB5O94eDBNA98KRA0vA+Y11YkQAEjLnlUPH/GxjadSGZmSTujjKLGuTrhD9OmKDg==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24.11.0}
     peerDependencies:
-      typeorm: ^0.3.28
+      typeorm: '>=1.0.0'
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -2468,7 +2468,7 @@ snapshots:
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
-  '@jorgebodega/typeorm-factory@3.0.0(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.9.7)(typescript@5.9.3)))':
+  '@jorgebodega/typeorm-factory@4.0.0-next.1(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.9.7)(typescript@5.9.3)))':
     dependencies:
       tslib: 2.8.1
       typeorm: 1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@25.9.7)(typescript@5.9.3))
