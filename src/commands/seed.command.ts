@@ -1,45 +1,28 @@
 import { resolve } from "node:path";
 import { Command } from "commander";
 import ora from "ora";
-import type { DataSource } from "typeorm";
 import { DataSourceImportationError, SeederExecutionError, SeederImportationError } from "../errors";
 import { useDataSource, useSeeders } from "../helpers";
-import type { Seeder } from "../seeder";
-import type { Constructable, SeedCommandArguments } from "../types";
+import type { SeedCommandArguments } from "../types";
 import { loadDataSource, loadSeeders } from "../utils";
 
-async function run(paths: string[]) {
-	const opts = seedCommand.opts<SeedCommandArguments>();
+async function run(paths: string[], opts: SeedCommandArguments) {
 	// biome-ignore lint/complexity/useLiteralKeys: Conflict with TS
-	const spinner = ora({ isSilent: process.env["NODE_ENV"] === "test" }).start();
+	const spinner = ora({ isSilent: process.env["NODE_ENV"] === "test" });
 
 	spinner.start("Loading datasource");
-	let dataSource!: DataSource;
-	try {
-		const dataSourcePath = resolve(process.cwd(), opts.dataSource);
-
-		dataSource = await loadDataSource(dataSourcePath);
-
-		spinner.succeed("Datasource loaded");
-	} catch (error: unknown) {
+	const dataSource = await loadDataSource(resolve(process.cwd(), opts.dataSource)).catch((error: unknown) => {
 		spinner.fail("Could not load the data source!");
-		throw new DataSourceImportationError("Could not load the data source!", {
-			cause: error,
-		});
-	}
+		throw new DataSourceImportationError("Could not load the data source!", { cause: error });
+	});
+	spinner.succeed("Datasource loaded");
 
 	spinner.start("Importing seeders");
-	let seeders!: Constructable<Seeder>[];
-	try {
-		seeders = await loadSeeders(dataSource, paths);
-
-		spinner.succeed("Seeder imported");
-	} catch (error: unknown) {
+	const seeders = await loadSeeders(dataSource, paths).catch((error: unknown) => {
 		spinner.fail("Could not load seeders!");
-		throw new SeederImportationError("Could not load seeders!", {
-			cause: error,
-		});
-	}
+		throw new SeederImportationError("Could not load seeders!", { cause: error });
+	});
+	spinner.succeed("Seeder imported");
 
 	spinner.info("Executing seeders...");
 	try {
@@ -52,10 +35,8 @@ async function run(paths: string[]) {
 		}
 	} catch (error: unknown) {
 		spinner.fail("Could not execute seeder!");
-		if (dataSource.isInitialized) await dataSource.destroy();
-		throw new SeederExecutionError("Could not execute seeder!", {
-			cause: error,
-		});
+		if (dataSource.isInitialized) await dataSource.destroy().catch(() => undefined);
+		throw new SeederExecutionError("Could not execute seeder!", { cause: error });
 	}
 
 	spinner.succeed("Finished seeding");

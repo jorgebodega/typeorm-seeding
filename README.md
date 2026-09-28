@@ -166,7 +166,7 @@ This command executes the seeders found in the given paths. Glob patterns are su
 typeorm-seeding seed -d <dataSourcePath> <paths...>
 ```
 
-Every exported class extending Seeder in the matched files is executed.
+Every exported class extending Seeder in the matched files is executed once. Abstract classes that do not implement `run` are skipped.
 
 ```mermaid
 flowchart TD
