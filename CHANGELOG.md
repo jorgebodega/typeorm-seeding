@@ -1,3 +1,24 @@
+## [8.0.0](https://github.com/jorgebodega/typeorm-seeding/compare/v7.1.0...v8.0.0) (2026-09-28)
+
+### ⚠ BREAKING CHANGES
+
+* update node requirements (#350)
+
+### Features
+
+* update node requirements ([#350](https://github.com/jorgebodega/typeorm-seeding/issues/350)) ([cd9e158](https://github.com/jorgebodega/typeorm-seeding/commit/cd9e158e35760b355f3e1b6f737b556f3299f5da))
+* upgrade biome ([#352](https://github.com/jorgebodega/typeorm-seeding/issues/352)) ([fd78fd4](https://github.com/jorgebodega/typeorm-seeding/commit/fd78fd45347239a8844f274b99024e3c10226be2))
+* upgrade commander ([#353](https://github.com/jorgebodega/typeorm-seeding/issues/353)) ([b4a220f](https://github.com/jorgebodega/typeorm-seeding/commit/b4a220f4b3585996127e984e4b0b0d8122d29c8d))
+* upgrade packages ([#351](https://github.com/jorgebodega/typeorm-seeding/issues/351)) ([c757531](https://github.com/jorgebodega/typeorm-seeding/commit/c757531aad24d289c5e4b4ca9cec9aad676d3a76))
+* upgrade pnpm ([#375](https://github.com/jorgebodega/typeorm-seeding/issues/375)) ([b18f1e6](https://github.com/jorgebodega/typeorm-seeding/commit/b18f1e66f48cae19495d8788c4c690cf74955180))
+
+### Bug Fixes
+
+* apply pre-release review fixes ([#383](https://github.com/jorgebodega/typeorm-seeding/issues/383)) ([c0dbd8f](https://github.com/jorgebodega/typeorm-seeding/commit/c0dbd8f90f27db4e11e461d093a36bc5f6c08209))
+* include jest types in tsconfig ([#374](https://github.com/jorgebodega/typeorm-seeding/issues/374)) ([0e82ed8](https://github.com/jorgebodega/typeorm-seeding/commit/0e82ed8e567690a70fe2896b4dd398f811a314ee))
+* skip redundant save and keep original seeding errors ([#378](https://github.com/jorgebodega/typeorm-seeding/issues/378)) ([ad095cf](https://github.com/jorgebodega/typeorm-seeding/commit/ad095cfa35d409f4b388b0d2eda970a760c935d9))
+* update all non-major dependencies (patch) ([#357](https://github.com/jorgebodega/typeorm-seeding/issues/357)) ([bea89e2](https://github.com/jorgebodega/typeorm-seeding/commit/bea89e20e0b4f69240cce9a7f6988a9087f3e335))
+
 ## [8.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v7.1.0...v8.0.0-next.1) (2026-01-20)
 
 ### ⚠ BREAKING CHANGES
