@@ -14,7 +14,7 @@
 	"description": "🌱 A delightful way to seed test data into your database.",
 	"devDependencies": {
 		"@biomejs/biome": "2.5.15",
-		"@faker-js/faker": "10.5.0",
+		"@faker-js/faker": "10.6.0",
 		"@jorgebodega/typeorm-factory": "4.0.0-next.1",
 		"@swc/core": "1.16.13",
 		"@swc/jest": "0.2.39",
