@@ -184,7 +184,7 @@ importers:
         version: 9.9.0
       '@jorgebodega/typeorm-factory':
         specifier: 4.0.0-next.1
-        version: 4.0.0-next.1(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)))
+        version: 4.0.0-next.1(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)))
       '@swc/core':
         specifier: 1.16.13
         version: 1.16.13
@@ -208,19 +208,19 @@ importers:
         version: 12.11.1
       jest:
         specifier: 30.5.2
-        version: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+        version: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       rimraf:
         specifier: 6.1.3
         version: 6.1.3
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)
+        version: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)
       typeorm:
         specifier: 1.1.1
-        version: 1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+        version: 1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       typescript:
-        specifier: 5.9.3
-        version: 5.9.3
+        specifier: 6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -2011,8 +2011,8 @@ packages:
       typeorm-aurora-data-api-driver:
         optional: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2372,7 +2372,7 @@ snapshots:
       jest-util: 30.5.1
       slash: 3.0.0
 
-  '@jest/core@30.5.2(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))':
+  '@jest/core@30.5.2(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))':
     dependencies:
       '@jest/console': 30.5.2
       '@jest/pattern': 30.5.0
@@ -2380,7 +2380,7 @@ snapshots:
       '@jest/test-result': 30.5.2
       '@jest/transform': 30.5.2(supports-color@8.1.1)
       '@jest/types': 30.5.1
-      '@types/node': 25.9.7
+      '@types/node': 25.9.8
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       ci-info: 4.4.0
@@ -2388,7 +2388,7 @@ snapshots:
       fast-json-stable-stringify: 2.1.0
       graceful-fs: 4.2.11
       jest-changed-files: 30.5.1
-      jest-config: 30.5.2(@types/node@25.9.7)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+      jest-config: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       jest-haste-map: 30.5.1
       jest-message-util: 30.5.1
       jest-regex-util: 30.5.0
@@ -2469,7 +2469,7 @@ snapshots:
       '@jest/transform': 30.5.2(supports-color@8.1.1)
       '@jest/types': 30.5.1
       '@jridgewell/trace-mapping': 0.3.31
-      '@types/node': 25.9.7
+      '@types/node': 25.9.8
       chalk: 4.1.2
       collect-v8-coverage: 1.0.3
       exit-x: 0.2.2
@@ -2550,10 +2550,10 @@ snapshots:
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
-  '@jorgebodega/typeorm-factory@4.0.0-next.1(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)))':
+  '@jorgebodega/typeorm-factory@4.0.0-next.1(typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)))':
     dependencies:
       tslib: 2.8.1
-      typeorm: 1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+      typeorm: 1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -3296,7 +3296,7 @@ snapshots:
       '@jest/expect': 30.5.2(supports-color@8.1.1)
       '@jest/test-result': 30.5.2
       '@jest/types': 30.5.1
-      '@types/node': 25.9.7
+      '@types/node': 25.9.8
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.7.2
@@ -3316,15 +3316,15 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)):
+  jest-cli@30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)):
     dependencies:
-      '@jest/core': 30.5.2(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+      '@jest/core': 30.5.2(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       '@jest/test-result': 30.5.2
       '@jest/types': 30.5.1
       chalk: 4.1.2
       exit-x: 0.2.2
       import-local: 3.2.0
-      jest-config: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+      jest-config: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       jest-util: 30.5.1
       jest-validate: 30.5.1
       yargs: 17.7.3
@@ -3335,39 +3335,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  jest-config@30.5.2(@types/node@25.9.7)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)):
-    dependencies:
-      '@babel/core': 7.29.7(supports-color@8.1.1)
-      '@jest/get-type': 30.5.0
-      '@jest/pattern': 30.5.0
-      '@jest/test-sequencer': 30.5.2
-      '@jest/types': 30.5.1
-      babel-jest: 30.5.2(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1)
-      chalk: 4.1.2
-      ci-info: 4.4.0
-      deepmerge: 4.3.1
-      glob: 13.0.6
-      graceful-fs: 4.2.11
-      jest-circus: 30.5.2(supports-color@8.1.1)
-      jest-docblock: 30.5.0
-      jest-environment-node: 30.5.2
-      jest-regex-util: 30.5.0
-      jest-resolve: 30.5.1
-      jest-runner: 30.5.2(supports-color@8.1.1)
-      jest-util: 30.5.1
-      jest-validate: 30.5.1
-      parse-json: 5.2.0
-      pretty-format: 30.5.1
-      slash: 3.0.0
-      strip-json-comments: 3.1.1
-    optionalDependencies:
-      '@types/node': 25.9.7
-      ts-node: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)
-    transitivePeerDependencies:
-      - babel-plugin-macros
-      - supports-color
-
-  jest-config@30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)):
+  jest-config@30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)):
     dependencies:
       '@babel/core': 7.29.7(supports-color@8.1.1)
       '@jest/get-type': 30.5.0
@@ -3394,7 +3362,7 @@ snapshots:
       strip-json-comments: 3.1.1
     optionalDependencies:
       '@types/node': 25.9.8
-      ts-node: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)
+      ts-node: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -3523,7 +3491,7 @@ snapshots:
       '@jest/test-result': 30.5.2
       '@jest/transform': 30.5.2(supports-color@8.1.1)
       '@jest/types': 30.5.1
-      '@types/node': 25.9.7
+      '@types/node': 25.9.8
       chalk: 4.1.2
       emittery: 0.13.1
       exit-x: 0.2.2
@@ -3551,7 +3519,7 @@ snapshots:
       '@jest/test-result': 30.5.2
       '@jest/transform': 30.5.2(supports-color@8.1.1)
       '@jest/types': 30.5.1
-      '@types/node': 25.9.7
+      '@types/node': 25.9.8
       chalk: 4.1.2
       cjs-module-lexer: 2.2.1
       collect-v8-coverage: 1.0.3
@@ -3633,12 +3601,12 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)):
+  jest@30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)):
     dependencies:
-      '@jest/core': 30.5.2(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+      '@jest/core': 30.5.2(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       '@jest/types': 30.5.1
       import-local: 3.2.0
-      jest-cli: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3))
+      jest-cli: 30.5.2(@types/node@25.9.8)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -3987,7 +3955,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
 
-  ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3):
+  ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.13
@@ -4001,7 +3969,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.4
       make-error: 1.3.6
-      typescript: 5.9.3
+      typescript: 6.0.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optionalDependencies:
@@ -4017,7 +3985,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)):
+  typeorm@1.1.1(better-sqlite3@12.11.1)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.4.0
@@ -4031,12 +3999,12 @@ snapshots:
       yargs: 18.2.0
     optionalDependencies:
       better-sqlite3: 12.11.1
-      ts-node: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@5.9.3)
+      ts-node: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
 
-  typescript@5.9.3: {}
+  typescript@6.0.3: {}
 
   undici-types@7.24.6: {}
 
