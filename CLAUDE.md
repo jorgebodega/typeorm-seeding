@@ -21,7 +21,7 @@ Sibling repo: `jorgebodega/typeorm-factory`; this repo uses it in tests.
 | `src/datasource/` | process-wide `DataSourceManager` |
 | `src/utils/commandUtils.ts` | wraps the TypeORM internals `CommandUtils.loadDataSource` and `importClassesFromDirectories` |
 | `src/errors/` | typed errors wrapping `cause` |
-| `test/` | Jest suites against sqlite `:memory:` (needs `--experimental-vm-modules`, which the scripts set) |
+| `test/` | Jest suites against sqlite `:memory:` |
 
 ## Conventions
 
