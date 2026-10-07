@@ -1,3 +1,13 @@
+## [9.0.0-next.2](https://github.com/jorgebodega/typeorm-seeding/compare/v9.0.0-next.1...v9.0.0-next.2) (2026-10-07)
+
+### Features
+
+* use swc instead of ts-jest ([#390](https://github.com/jorgebodega/typeorm-seeding/issues/390)) ([1bb2189](https://github.com/jorgebodega/typeorm-seeding/commit/1bb21891eb40fae2cc8db6b9beb407150ae21b84))
+
+### Bug Fixes
+
+* set rootDir in the build tsconfig ([#396](https://github.com/jorgebodega/typeorm-seeding/issues/396)) ([6af38d3](https://github.com/jorgebodega/typeorm-seeding/commit/6af38d35975e3b9abb215f04d853c46769b131ab))
+
 ## [9.0.0-next.1](https://github.com/jorgebodega/typeorm-seeding/compare/v8.0.0...v9.0.0-next.1) (2026-09-28)
 
 ### ⚠ BREAKING CHANGES
