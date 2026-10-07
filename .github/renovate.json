@@ -27,6 +27,11 @@
 		},
 		{
 			"enabled": false,
+			"matchPackageNames": ["commander", "ora"],
+			"matchUpdateTypes": ["major"]
+		},
+		{
+			"enabled": false,
 			"matchBaseBranches": ["/^[0-9]+\\.x$/"]
 		}
 	],
