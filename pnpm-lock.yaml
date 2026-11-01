@@ -184,7 +184,7 @@ importers:
         version: 10.6.0
       '@jorgebodega/typeorm-factory':
         specifier: 4.0.0
-        version: 4.0.0(typeorm@1.1.1(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)))
+        version: 4.0.0(typeorm@1.1.2(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)))
       '@swc/core':
         specifier: 1.16.13
         version: 1.16.13
@@ -216,8 +216,8 @@ importers:
         specifier: 10.9.2
         version: 10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)
       typeorm:
-        specifier: 1.1.1
-        version: 1.1.1(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
+        specifier: 1.1.2
+        version: 1.1.2(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -1877,8 +1877,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  typeorm@1.1.1:
-    resolution: {integrity: sha512-og9mG4Lwlvj6MfvYd8yRCzXy73gETtwgTKQ/ISLYvEOpJPy4IrjU/89HK4ZAFmRIbEg1hkIk04v8phTrxfgPmQ==}
+  typeorm@1.1.2:
+    resolution: {integrity: sha512-UDQ8++2oFCK4fETiRKEC0eCES/i+/1SB4NBqXWeJNosI1i2SVFCDPhqIsXHWpFzFHTBOA553upQZj0NKVbNdUQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.11.0}
     hasBin: true
     peerDependencies:
@@ -2465,10 +2465,10 @@ snapshots:
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
-  '@jorgebodega/typeorm-factory@4.0.0(typeorm@1.1.1(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)))':
+  '@jorgebodega/typeorm-factory@4.0.0(typeorm@1.1.2(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)))':
     dependencies:
       tslib: 2.8.1
-      typeorm: 1.1.1(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
+      typeorm: 1.1.2(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3))
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -3803,7 +3803,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typeorm@1.1.1(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)):
+  typeorm@1.1.2(better-sqlite3@13.0.3)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@25.9.8)(typescript@6.0.3)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.4.0
